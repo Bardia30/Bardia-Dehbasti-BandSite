@@ -1,0 +1,11 @@
+@use './partials/mixins' as *;
+@use './partials/variables' as *;
+@use './partials/header' as *;
+@use './partials/main' as *;
+
+body{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+

@@ -1,0 +1,30 @@
+@font-face{
+    font-family: "avenir-bold";
+    src: url(../../Design-Package/Assets/Font/AvenirNextLTPro-Bold.otf);
+}
+
+@font-face{
+    font-family: "avenir-demi";
+    src: url(../../Design-Package/Assets/Font/AvenirNextLTPro-Demi.otf);
+
+}
+
+@font-face{
+    font-family: "avenir-regular";
+    src: url(../../Design-Package/Assets/Font/AvenirNextLTPro-Regular.otf)
+}
+
+$font-regular: "avenir-regular";
+$font-bold: "avenir-bold";
+$font-demi: "avenir-demi";
+
+$primary-bg-color: #323232;
+$Secondary-text: #AFAFAF;
+$secondary-bg-color:#FFFFFF;
+$CTA-hover: #000000;
+$divider-color:#E1E1E1;
+$alternative-background: #FAFAFA;
+
+
+
+

@@ -1,0 +1,23 @@
+@use './mixins' as *;
+@use './variables' as *;
+
+
+.hero {
+    height:80vh;
+    display: flex;
+    align-items: center;
+    padding-left:10vw;
+    background-image: url(../../Design-Package/Assets/Images/hero-bio.jpg);
+    background-size: cover;
+    
+    // &__img {
+    //     height:100%;
+    //     width:100vw;
+    // }
+    &__h2{
+        position:relative;
+        font-family: "avenir-demi";
+        font-size: 3rem;
+        color:$alternative-background;
+    }
+}
