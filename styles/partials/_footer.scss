@@ -1,0 +1,76 @@
+@use './mixins' as *;
+@use './variables' as *;
+
+
+footer {
+    background: $primary-bg-color;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 5rem;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__title{
+        font-family: 'avenir-demi';
+        font-size:2em;
+        color: $alternative-background;
+        font-weight: 400;
+        margin-right: 3.5rem;
+    }
+    &__icons-section {
+        display: flex;
+        column-gap:2rem;
+    }
+    
+    &__logo {
+        width:120px;
+        height:20px;
+    }
+}
+
+
+.footer-card {
+    display:flex;
+    flex-wrap: wrap;
+    column-gap: 3rem;
+    padding-bottom:2rem;
+
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    &__name{
+        font-family: 'avenir-regular';
+        font-size:1em;
+        color: $alternative-background;
+        font-weight: 600;
+        line-height: 1.5rem;
+    }
+    &__address {
+        font-family: 'avenir-regular';
+        font-size:1em;
+        color: $alternative-background;
+        font-weight: 400;
+        margin-bottom: 2rem;
+        line-height: 1.5rem;
+    }
+    &__email {
+        text-decoration: none;
+        font-family: 'avenir-regular';
+        font-size:0.9em;
+        color: $alternative-background;
+        font-weight: 400;
+    }
+}
+
+
+.footer-copyright {
+    font-family: 'avenir-regular';
+    font-size:1em;
+    color: $alternative-background;
+    font-weight: 400;
+}

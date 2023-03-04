@@ -2,10 +2,12 @@
 @use './partials/variables' as *;
 @use './partials/header' as *;
 @use './partials/main' as *;
+@use './partials/footer' as *;
 
 body{
     margin: 0;
     box-sizing: border-box;
+    background: $alternative-background;
 }
 
 

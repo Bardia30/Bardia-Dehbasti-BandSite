@@ -4,7 +4,7 @@
 
 .nav {
     background: $primary-bg-color;
-    padding:4vh 10vw 0 10vw;
+    padding:2rem 9rem 0 8rem;
     display: flex;
     column-gap: 5vw;
     &__logo{
@@ -14,12 +14,12 @@
     &__link {
         text-decoration: none;
         font-family: "avenir-regular";
-        color:$divider-color;
+        color: $divider-color;
         &--current{
             font-family:"avenir-demi";
             border-bottom: 3px solid $secondary-bg-color;
             color:$alternative-background;
-            padding-bottom: 4vh;
+            padding-bottom: 2rem;
         }
     }
 }
