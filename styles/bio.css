@@ -17,9 +17,34 @@
   -moz-column-gap: 5vw;
        column-gap: 5vw;
 }
+@media (min-width: 768px) {
+  .nav {
+    padding: 0 3.5rem 0 3.5rem;
+    align-items: center;
+  }
+}
+@media (min-width: 1280px) {
+  .nav {
+    align-items: normal;
+    padding: 2rem 9rem 0 8rem;
+    height: normal;
+  }
+}
 .nav__logo {
   width: 120px;
   height: 20px;
+}
+@media (min-width: 768px) {
+  .nav__logo {
+    width: 180px;
+    height: 40px;
+  }
+}
+@media (min-width: 1280px) {
+  .nav__logo {
+    width: 120px;
+    height: 20px;
+  }
 }
 .nav__link {
   text-decoration: none;
@@ -32,32 +57,57 @@
   color: #FAFAFA;
   padding-bottom: 2rem;
 }
+@media (min-width: 768px) {
+  .nav__link--current {
+    padding-bottom: 2.25rem;
+    padding-top: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .nav__link--current {
+    padding-bottom: 2rem;
+    padding-top: 0;
+  }
+}
 
 .hero {
   height: 75vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  overflow: hidden;
+  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../../Design-Package/Assets/Images/hero-bio.jpg) no-repeat center;
+  background-size: cover;
 }
-.hero__img {
-  width: 100vw;
-  height: 82vh;
-  filter: brightness(50%);
-  position: relative;
-  z-index: -1;
+@media (min-width: 768px) {
+  .hero {
+    height: 65vh;
+  }
+}
+@media (min-width: 1280px) {
+  .hero {
+    height: 75vh;
+  }
 }
 .hero__title {
   font-family: "avenir-demi";
   font-size: 3rem;
   color: #FAFAFA;
-  filter: brightness(100%);
-  padding-left: 8rem;
-  position: relative;
-  z-index: 0;
-  top: 41vh;
-  margin: 0;
+}
+@media (min-width: 768px) {
+  .hero__title {
+    font-size: 3.8rem;
+    top: 35vh;
+    padding-left: 4rem;
+    background-size: auto;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__title {
+    font-size: 3rem;
+    padding-left: 8rem;
+  }
 }
 
 .about {

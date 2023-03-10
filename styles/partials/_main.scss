@@ -4,32 +4,37 @@
 
 .hero {
     height:75vh;
-     //use rem instead
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: flex-start;
-     overflow: hidden;
-     &__img {
-        width:100vw;
-        height:82vh;
-        filter: brightness(50%);
-        position: relative;
-        z-index: -1;
-     }
-    //  background-image: url(../../Design-Package/Assets/Images/hero-bio.jpg);
-    //  background-size: cover;
-    //  filter: brightness(50%);
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background: linear-gradient(rgba(50,50,50,0.5),rgba(50,50,50,0.5)), url(../../Design-Package/Assets/Images/hero-bio.jpg) no-repeat center;
+    background-size: cover;
+    @include tablet {
+        height:65vh;
+    } 
+    @include desktop {
+        height:75vh;
+    }
     &__title{
         font-family: "avenir-demi";
         font-size: 3rem;
         color:$alternative-background;
-        filter: brightness(100%);
-        padding-left: 8rem;
-        position: relative;
-        z-index: 0;
-        top: 41vh;
-        margin:0;
+        // position: relative;
+        // z-index: 1;
+        // margin:0;
+        @include tablet {
+            font-size: 3.8rem;
+            top:35vh;
+            padding-left: 4rem;
+            background-size: auto;
+        }
+        @include desktop {
+            
+            font-size: 3rem;
+            padding-left: 8rem;
+        }
     }
 }
 
