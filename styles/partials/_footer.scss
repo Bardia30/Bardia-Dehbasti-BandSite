@@ -7,6 +7,12 @@ footer {
     display: flex;
     flex-direction: column;
     padding: 2rem 5rem;
+    @include tablet {
+        padding: 2rem 3rem;
+    }
+    @include desktop {
+        padding: 2rem 5rem;
+    }
 }
 
 .footer-top {
@@ -15,19 +21,50 @@ footer {
     align-items: center;
     &__title{
         font-family: 'avenir-demi';
-        font-size:2em;
+        font-size:3rem;
         color: $alternative-background;
         font-weight: 400;
         margin-right: 3.5rem;
+        @include tablet {
+            font-family: "avenir-demi";
+            font-size: 2.75rem;
+            color: #FAFAFA;
+            font-weight: 400;
+            margin-right: 1.5rem;
+        }
+        @include desktop {
+            font-family: 'avenir-demi';
+            font-size:2.5rem;
+            color: $alternative-background;
+            font-weight: 400;
+            margin-right: 0.8rem;
+        }
     }
     &__icons-section {
         display: flex;
         column-gap:2rem;
     }
-    
+    &__icons{
+
+
+        @include tablet {
+            transform: scale(1.5);
+        }
+        @include desktop {
+            transform: scale(1.2);
+        }
+    }
     &__logo {
-        width:120px;
-        height:20px;
+        // width:120px;
+        // height:20px;
+        @include tablet{
+            transform: scale(1.25);
+            margin-right: 1rem;
+        }
+        @include desktop {
+            transform: scale(1);
+            margin-right:0;
+        }
     }
 }
 
