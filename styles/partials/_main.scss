@@ -10,7 +10,7 @@
     background: linear-gradient(rgba(50,50,50,0.5),rgba(50,50,50,0.5)), url(../../Design-Package/Assets/Images/hero-bio.jpg) no-repeat center;
     background-size: cover;
     @include tablet {
-        height:65vh;
+        height:54vh;
     }
     @include desktop {
         height:75vh;
@@ -23,9 +23,9 @@
         // z-index: 1;
         // margin:0;
         @include tablet {
-            font-size: 4.25rem;
+            font-size: 4rem;
             top:35vh;
-            padding-left: 4rem;
+            padding-left: 3rem;
             background-size: auto;
         }
         @include desktop {
@@ -49,10 +49,10 @@
         align-self:flex-start;
         @include tablet{
             font-family: "avenir-demi";
-            font-size: 3rem;
+            font-size: 2.35rem;
             color: #323232;
             font-weight: 400;
-            padding: 4rem 0 2.5rem 3rem;
+            padding: 3rem 0 1.5rem 3rem;
             margin: 0;
             align-self: flex-start;
         }
@@ -69,8 +69,8 @@
     &__img{
         width:65%;
         @include tablet{
-            width: 44rem;
-            height: 26rem;
+            width: 37rem;
+            height: 19rem;
         }
         @include desktop{
             width:53rem;
@@ -88,10 +88,10 @@
         @include tablet{
             align-self: flex-start;
             font-family: "avenir-demi";
-            font-size: 1.75rem;
+            font-size: 1.45rem;
             color: #323232;
-            padding: 1rem 7.6rem;
-            width: 76%;
+            padding: 1rem 5.7rem;
+            width: 37rem;
             margin-bottom: 0;
         }
         @include desktop{
@@ -114,9 +114,9 @@
         @include tablet {
             align-self: flex-start;
             font-family: "avenir-demi";
-            font-size: 1.25rem;
+            font-size: 1rem;
             color: #323232;
-            padding: 0.5rem 14rem 2rem 7.6rem;
+            padding: 0.5rem 14rem 2rem 5.7rem;
             margin: 0;
         }
         @include desktop {
@@ -140,7 +140,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0 7.6rem;
+        padding: 0 5.7rem;
     }
     @include desktop {
         display: flex;
@@ -153,19 +153,13 @@
         font-size: 1.5rem;
         color: $primary-bg-color;
         font-weight: 500;
-        @include tablet {
-            font-size: 1.85rem;
-        }
-        @include desktop {
-            font-family: 'avenir-demi';
-            font-size: 1.5rem;
-            color: $primary-bg-color;
-            font-weight: 500;
-        }
     }
     &__container {
         display: flex;
         column-gap: 1.5rem;
+        @include tablet {
+            column-gap:2rem;
+        }
     }
     &__long-paragraph{
         font-family: 'avenir-regular';
@@ -174,9 +168,9 @@
         line-height: 1.25rem;
         @include tablet {
             font-family: "avenir-regular";
-            font-size: 1.125rem;
+            font-size: 0.85rem;
             color: #323232;
-            line-height: 1.75rem;
+            line-height: 1.55rem;
             margin-top:0;
         }
         @include desktop {
@@ -190,11 +184,12 @@
 
 .gallery-section {
     padding:2rem 5rem;
+    background-color: $alternative-background;
     @include tablet {
         padding:2rem 3rem;
     }
     @include desktop {
-        padding:2rem 5rem;
+        padding:2rem 8rem;
     }
     &__title {
         font-family: 'avenir-demi';
@@ -202,11 +197,11 @@
         color:$primary-bg-color;
         font-weight: 400;
         @include tablet {
-            font-size:3rem;
+            font-size:2.35rem;
             margin-bottom: 1.5rem;
         }
         @include desktop {
-            font-size: 2em;
+            font-size: 2.5rem;
         }
     }
 }
@@ -220,9 +215,9 @@
     @include tablet {
         display: flex;
         flex-wrap: wrap;
-        column-gap: 2.30rem;
-        row-gap: 2.3rem;
-        justify-content: center;
+        
+        row-gap: 2rem;
+        justify-content: space-between;
     }
     @include desktop {
         display:flex;
