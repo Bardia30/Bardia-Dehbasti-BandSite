@@ -4,46 +4,81 @@
 
 .nav {
     background: $primary-bg-color;
-    padding:2rem 9rem 0 8rem;
     display: flex;
     column-gap: 5vw;
+    flex-direction: column;
     @include tablet {
         padding: 0 3.25rem 0 3.25rem;
+        flex-direction: row;
         align-items: center;
     }
     @include desktop {
-        align-items: normal;
-        padding:2rem 9rem 0 8rem;
-        height: normal;
+        
+        padding: 1rem 9rem 1rem 8rem;
+        
     }
     &__logo{
-        width:120px; //fix the units
-        height:20px;
+        padding: 1.25rem 0;
+        transform: scale(1.25);
         @include tablet {
+            transform: scale(1);
             margin-right:2rem;
         }
         @include desktop{
-            width:120px;
-            height:20px;
+            transform:scale(1.15);
+            margin-right:0.5rem;
+        }
+    }
+    &__list {
+        display:flex;
+        list-style-type: none;
+        margin:0;
+        padding-left:0;
+    }
+    &__item {
+        padding-left: 0;
+        text-align: center;
+        width:50vw;
+        @include tablet {
+            width:100%
+        }
+        &--current {
+            padding-bottom:0.75rem;
+            border-bottom: 3px solid $secondary-bg-color;
+            @include tablet {
+                padding-bottom: 0;
+                border-bottom: none;
+            }
         }
     }
     &__link {
         text-decoration: none;
         font-family: "avenir-regular";
-        color: $divider-color;
+        color: $Secondary-text;
+        @include tablet {
+            font-size: 0.88rem;
+            margin-right: 3rem;
+        }
+        @include desktop {
+            font-size: 1rem;
+        }
         &--current{
-            font-family:"avenir-demi";
-            border-bottom: 3px solid $secondary-bg-color;
+            font-family:"avenir-regular";
             color:$alternative-background;
             padding-bottom: 2rem;
             @include tablet {
-                padding-bottom: 1.6rem;
+                border-bottom: 3px solid $secondary-bg-color;
+                padding-bottom: 1.27rem;
                 padding-top:1.6rem;
             }
             @include desktop {
-                padding-bottom: 2rem;
+                padding-bottom: 2.35rem;
                 padding-top: 0;
         }
         }
     }
+}
+
+.logo-link {
+    align-self: center;
 }
