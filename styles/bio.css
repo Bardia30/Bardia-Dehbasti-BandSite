@@ -13,15 +13,23 @@
 .nav {
   background: #323232;
   display: flex;
+  justify-content: normal;
+  align-items: normal;
+  flex-direction: column;
+  flex-wrap: nowrap;
   -moz-column-gap: 5vw;
        column-gap: 5vw;
-  flex-direction: column;
 }
 @media (min-width: 768px) {
   .nav {
-    padding: 0 3.25rem 0 3.25rem;
-    flex-direction: row;
+    padding: 0 3.25rem;
+    display: flex;
+    justify-content: normal;
     align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    -moz-column-gap: 5vw;
+         column-gap: 5vw;
   }
 }
 @media (min-width: 1280px) {
@@ -31,7 +39,6 @@
 }
 .nav__logo {
   padding: 1.25rem 0;
-  transform: scale(1.25);
 }
 @media (min-width: 768px) {
   .nav__logo {

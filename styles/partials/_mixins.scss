@@ -15,4 +15,23 @@
 }
 
 
+@mixin flex($align: normal, $justify:normal, $direction:row, $wrap: nowrap, $gap:5vw) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction:$direction;
+    flex-wrap:$wrap;
+    column-gap: $gap;
+}
+
+
+
+@mixin font($size:4em, $weight: 300, $color:$primary-text, $family:'avenir-demi') {
+    font-size:$size;
+    font-weight:$weight;
+    color: $color;
+    font-family: $family;
+}
+
+
 
