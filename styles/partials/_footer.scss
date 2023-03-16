@@ -41,7 +41,7 @@ footer {
         @include tablet {
             @include text-alterations($size:2.35rem, $pad:3rem 0 2.25rem 0, $w:normal);
             //font-size: 2.35rem;
-            margin-right: 0.75rem;
+            margin-right: 0.55rem;
             //padding:3rem 0 2.25rem 0;
         }
         @include desktop {
@@ -65,7 +65,7 @@ footer {
         //padding-left:0.25rem;
         //margin-right: 0.5rem;
         // padding-top:.25rem;
-        padding:0.25rem 0.5rem 0 0.25rem;
+        padding:0.25rem 0.5rem 0 0.35rem;
         @include tablet{
             transform: scale(1.2);
             padding: 0.25rem 0 0 0;
@@ -95,7 +95,7 @@ footer {
     @include flex($wrap:wrap, $gap:3rem);
     padding-bottom:2rem;
     @include tablet {
-        column-gap: 4rem;
+        column-gap: 3.8rem;
         width: 100%;
         padding-bottom:3rem;
     }
