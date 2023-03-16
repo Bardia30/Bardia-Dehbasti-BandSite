@@ -26,12 +26,28 @@
 
 
 
-@mixin font($size:4em, $weight: 300, $color:$primary-text, $family:'avenir-demi') {
+@mixin font($size:1rem, $weight: 500, $color:$primary-bg-color, $family:$font-regular,$line:normal) {
     font-size:$size;
     font-weight:$weight;
     color: $color;
     font-family: $family;
+    line-height: $line;
 }
 
+@mixin height-width($h:28vh,$w:100%) {
+    height:$h;
+    width: $w;
+}
+
+@mixin hero-bg($image:$bio-hero-url) {
+    background: $dark-filter, $image no-repeat center;
+    background-size: cover;
+}
+
+@mixin text-alterations($size:1.45rem, $pad:2.25rem 3rem 0 3rem, $w: 37rem) {
+    font-size: $size;
+    padding: $pad;
+    width: $w;
+}
 
 
