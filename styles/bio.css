@@ -1,14 +1,14 @@
 @font-face {
   font-family: "avenir-bold";
-  src: url("../../Design-Package/Assets/Font/AvenirNextLTPro-Bold.otf");
+  src: url("../../Design-Package/Assets/Font/Alternative-files/AvenirNextLTProBold.ttf");
 }
 @font-face {
   font-family: "avenir-demi";
-  src: url("../../Design-Package/Assets/Font/AvenirNextLTPro-Demi.otf");
+  src: url("../../Design-Package/Assets/Font/Alternative-files/AvenirNextLTProDemi.ttf");
 }
 @font-face {
   font-family: "avenir-regular";
-  src: url("../../Design-Package/Assets/Font/AvenirNextLTPro-Regular.otf");
+  src: url("../../Design-Package/Assets/Font/Alternative-files/AvenirNextLTPro.ttf");
 }
 .nav {
   background: #323232;
