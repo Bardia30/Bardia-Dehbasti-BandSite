@@ -1,17 +1,17 @@
 @font-face{
     font-family: "avenir-bold";
-    src: url(../../Design-Package/Assets/Font/AvenirNextLTPro-Bold.otf);
+    src: url('../../Design-Package/Assets/Font/AvenirNextLTPro-Bold.otf');
 }
 
 @font-face{
     font-family: "avenir-demi";
-    src: url(../../Design-Package/Assets/Font/AvenirNextLTPro-Demi.otf);
+    src: url('../../Design-Package/Assets/Font/AvenirNextLTPro-Demi.otf');
 
 }
 
 @font-face{
     font-family: "avenir-regular";
-    src: url(../../Design-Package/Assets/Font/AvenirNextLTPro-Regular.otf)
+    src: url('../../Design-Package/Assets/Font/AvenirNextLTPro-Regular.otf')
 }
 
 $font-regular: "avenir-regular";
@@ -26,7 +26,7 @@ $divider-color:#E1E1E1;
 $alternative-background: #FAFAFA;
 $active-cta: 3px solid $secondary-bg-color;
 $dark-filter: linear-gradient(rgba(50,50,50,0.5),rgba(50,50,50,0.5));
-$bio-hero-url: url(../../Design-Package/Assets/Images/hero-bio.jpg);
+$bio-hero-url: url('../../Design-Package/Assets/Images/hero-bio.jpg');
 
 
 
