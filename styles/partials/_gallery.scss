@@ -15,7 +15,7 @@
     &__title {
         @include font($size:2rem);
         margin: 0;
-        padding: 1.5rem 0 1rem 0;
+        padding: 2.75rem 0 1rem 0;
         @include tablet {
             @include text-alterations($size:2.35rem, $pad:3rem 0 2.25rem 0);
         }

@@ -157,7 +157,7 @@ footer {
   font-weight: 500;
   color: #FAFAFA;
   line-height: normal;
-  padding: 1.5rem 0 1rem 0;
+  padding: 2rem 0 1rem 0;
   margin: 0;
   width: 100%;
 }
@@ -539,7 +539,7 @@ footer {
   color: #323232;
   line-height: normal;
   margin: 0;
-  padding: 1.5rem 0 1rem 0;
+  padding: 2.75rem 0 1rem 0;
 }
 @media (min-width: 768px) {
   .gallery-section__title {
