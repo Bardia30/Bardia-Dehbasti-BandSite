@@ -26,11 +26,11 @@
 
 
 
-@mixin font($size:1rem, $weight: 500, $color:$primary-bg-color, $family:$font-regular,$line:normal) {
+@mixin font($size:1rem, $weight: 500, $color:$primary-bg-color,$line:normal) {
+    font-family:'avenir';
     font-size:$size;
     font-weight:$weight;
     color: $color;
-    font-family: $family;
     line-height: $line;
 }
 

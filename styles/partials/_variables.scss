@@ -1,22 +1,25 @@
 @font-face{
-    font-family: "avenir-bold";
+    font-family: "avenir";
     src: url('../../Design-Package/Assets/Font/Alternative-files/AvenirNextLTProBold.ttf');
+    font-style: normal;
+    font-weight: 700;
 }
 
 @font-face{
-    font-family: "avenir-demi";
+    font-family: "avenir";
     src: url('../../Design-Package/Assets/Font/Alternative-files/AvenirNextLTProDemi.ttf');
-
+    font-style: normal;
+    font-weight: 500;
 }
 
 @font-face{
-    font-family: "avenir-regular";
+    font-family: "avenir";
     src: url('../../Design-Package/Assets/Font/Alternative-files/AvenirNextLTPro.ttf');
+    font-style: normal;
+    font-weight: 400;
 }
 
-$font-regular: "avenir-regular";
-$font-bold: "avenir-bold";
-$font-demi: "avenir-demi";
+
 
 $primary-bg-color: #323232;
 $Secondary-text: #AFAFAF;

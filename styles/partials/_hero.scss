@@ -1,0 +1,43 @@
+@use './mixins' as *;
+@use './variables' as *;
+
+
+
+.hero {
+    // height:28vh;
+    // width:100%;
+    @include height-width;
+
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: flex-start;
+    @include flex($direction:column,$justify:center, $align:flex-start);
+    @include hero-bg;
+    @include tablet {
+        // height:54vh;
+        @include height-width($h:54vh);
+    }
+    @include desktop {
+        // height:75vh;
+        @include height-width($h:75vh);
+    }
+    &__title{
+       
+        // font-size: 2rem;
+        // color:$secondary-bg-color;
+        @include font($size:2rem, $color:$secondary-bg-color);
+        padding-left:1rem;
+        @include tablet {
+            //font-size: 4rem;
+            padding-left: 3rem;
+            
+            @include font($size:4rem,$color:$secondary-bg-color);
+        }
+        @include desktop {
+            
+            padding-left: 8rem;
+            
+        }
+    }
+}

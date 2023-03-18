@@ -1,8 +1,12 @@
 @use './partials/mixins' as *;
 @use './partials/variables' as *;
 @use './partials/header' as *;
-@use './partials/main' as *;
 @use './partials/footer' as *;
+@use './partials/about' as *;
+@use './partials/gallery' as *;
+@use './partials/hero' as *;
+@use './partials/paragraphs' as *;
+
 
 body{
     margin: 0;

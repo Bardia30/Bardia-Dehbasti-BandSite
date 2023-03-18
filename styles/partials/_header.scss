@@ -30,14 +30,14 @@
         margin:0;
         padding-left:0;
     }
-    &__item {
+    &__cta {
         padding-left: 0;
         text-align: center;
         width:50vw;
         @include tablet {
             width:100%
         }
-        &--current {
+        &--active{
             padding-bottom:0.75rem;
             border-bottom: $active-cta;
             @include tablet {
@@ -48,7 +48,7 @@
     }
     &__link {
         text-decoration: none;
-        @include font($color:$Secondary-text);
+        @include font($weight:400,$color:$Secondary-text);
         @include tablet {
             font-size: 0.88rem;
             margin-right: 3rem;
