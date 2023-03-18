@@ -4,8 +4,6 @@
 
 footer {
     background: $primary-bg-color;
-    // display: flex;
-    // flex-direction: column;
     @include flex($direction:column);
     padding: 0 1rem;
     @include tablet {
@@ -17,43 +15,27 @@ footer {
 }
 
 .footer-top {
-    // display: flex;
-    // justify-content: space-between;
-    // flex-direction: column;
     @include flex($direction:column, $justify:space-between, $gap:normal);
     @include tablet {
-        // display: flex;
-        // flex-direction: row;
-        // justify-content: space-between;
-        // align-items: center;
         @include flex($justify:space-between, $align:center);
     }
 
     &__title{
-        // font-family: 'avenir-demi';
-        // font-size:2rem;
-        // color: $alternative-background;
-        // font-weight: 400;
         @include font($size:2rem, $color:$alternative-background);
         padding:1.5rem 0 1rem 0;
         margin: 0;
         width:100%;
         @include tablet {
-            @include text-alterations($size:2.35rem, $pad:3rem 0 2.25rem 0, $w:normal);
-            //font-size: 2.35rem;
-            margin-right: 0.55rem;
-            //padding:3rem 0 2.25rem 0;
+            @include text-alterations($size:2.35rem, $pad:3rem 0 2.25rem 0,$w:14.375rem);
         }
         @include desktop {
             font-size:2.5rem;
             margin-right: 2rem;
+            width:15rem;
         }
     }
     &__icons-section {
-        // display: flex;
-        // column-gap:2rem;
-        // flex-wrap: wrap;
-        @include flex($wrap:wrap, $gap:2rem);
+        @include flex($wrap:wrap, $gap:1.125rem);
         margin-bottom: 1.5rem;
         @include tablet {
             flex-wrap: nowrap;
@@ -62,16 +44,12 @@ footer {
     }
     &__icons{
         transform: scale(1.5);
-        //padding-left:0.25rem;
-        //margin-right: 0.5rem;
-        // padding-top:.25rem;
         padding:0.25rem 0.5rem 0 0.35rem;
         @include tablet{
             transform: scale(1.2);
             padding: 0.25rem 0 0 0;
         }
         @include desktop{
-            // margin-right:0.75rem;
             padding:0.25rem 0.75rem 0 0;
         }
         
@@ -89,9 +67,6 @@ footer {
 
 
 .employees-section {
-    // display:flex;
-    // flex-wrap: wrap;
-    // column-gap: 3rem;
     @include flex($wrap:wrap, $gap:3rem);
     padding-bottom:2rem;
     @include tablet {
@@ -106,15 +81,8 @@ footer {
 }
 
 .employee{
-    // display: flex;
-    // flex-direction: column;
     @include flex($direction:column);
     &__name{
-        // font-family: 'avenir-regular';
-        // font-size:1em;
-        // color: $alternative-background;
-        // font-weight: 600;
-        // line-height: 1.5rem;
         @include font($color:$alternative-background, $line:1.5rem);
         @include tablet {
             font-size: 0.85rem;
@@ -125,14 +93,7 @@ footer {
         }
     }
     &__address {
-        // font-family: 'avenir-regular';
-        // font-size:1em;
-        // color: $alternative-background;
-        // font-weight: 400;
-        // margin-top:0;
-        // margin-bottom: 1rem;
         margin:0 0 1rem 0;
-        //line-height: 1.5rem;
         @include font($color:$alternative-background, $weight:400, $line:1.5rem);
         @include tablet {
             font-size: 0.85rem;
@@ -144,10 +105,6 @@ footer {
     }
     &__email {
         text-decoration: none;
-        // font-family: 'avenir-regular';
-        // font-size:1rem;
-        // color: $alternative-background;
-        // font-weight: 400;
         @include font($color:$alternative-background, $weight:400);
         margin-bottom:1rem;
         @include tablet {
@@ -159,17 +116,9 @@ footer {
 
 
 .copyright {
-    // font-family: 'avenir-regular';
-    // font-size:0.85rem;
-    // color: $alternative-background;
-    // font-weight: 400;
     @include font($size:0.85rem, $color:$alternative-background, $weight:400);
-    // margin-top: 1.5rem;
-    // margin-bottom: 1.5rem;
     margin:1.5rem 0;
     @include tablet {
-        // margin-top: 0;
-        // margin-bottom: 0;
         margin:0;
     }
 }

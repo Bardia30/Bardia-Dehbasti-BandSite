@@ -3,9 +3,6 @@
 
 
 .about {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
     @include flex($direction:column,$align:flex-start);
     padding: 0 1rem;
     @include tablet {
@@ -15,74 +12,41 @@
         padding: 0 8rem;
     }
     &__title {
-        // font-family: 'avenir-demi';
-        // font-size:2rem;
-        // color:$primary-bg-color;
-        // font-weight: 400;
         @include font($size:2rem);
         padding: 1.5rem 0 1rem 0;
         margin:0;
-        // align-self:flex-start;
         @include tablet{
-            // font-size: 2.35rem;
-            // padding: 3rem 0 2.25rem 0;
-            @include text-alterations($size:2.35rem, $pad:3rem 0 2.25rem 0, $w:normal);
+            @include text-alterations($size:2.35rem, $pad:3rem 0 2.25rem 0, $w:22.133rem);
         }
         @include desktop {
-            // font-size:2.5rem;
-            // padding: 3rem 0 2.25rem 0;
-            @include text-alterations($size:2.5rem, $pad:3rem 0 2.25rem 0, $w:normal);
+            @include text-alterations($size:2.5rem, $pad:3rem 0 2.25rem 0, $w:24.42rem);
         }
     }
     &__img{
         align-self: center;
-        // width: 24.5rem;
-        // height: 14rem;
-        // width:100%;
         @include height-width($h:100%);
         @include tablet{
-            // width: 37rem;
-            // height: 21rem;
             @include height-width($h:21rem,$w:37rem);
         }
         @include desktop{
-            // width:53rem;
-            // height:30rem;
             @include height-width($h:30rem,$w:53rem);
         }
     }
     &__quote{
-        // align-self: flex-start;
-        // font-family: 'avenir-demi';
-        // font-size: 1.15rem;
-        // color:$primary-bg-color;
         padding: 1rem 0 0.5rem 0;
         margin-bottom: 0;
-        //line-height: 2rem;
         margin-top:0;
         @include font($size:1.15rem,$line:2rem);
         @include tablet{
-            // font-size: 1.45rem;
-            // padding: 2.25rem 3rem 0 3rem;
-            // width: 37rem;
             @include text-alterations;
         }
         @include desktop{
-            // font-size: 1.5rem;
-            // padding: 2.25rem 5rem 0 5.75rem;
-            // width:69%;
-            //consider changing this to rem instead % for consistency
             @include text-alterations($size:1.5rem, $pad:2.25rem 5rem 0 5.75rem, $w: 69%);
         }
     }
     &__citation {
-        // align-self:flex-start;
-        // font-family: 'avenir-demi';
-        // font-size: 1.15rem;
-        // color:$primary-bg-color;
         @include font($size:1.15rem,$line:2rem);
         width: 91%;
-        //line-height:2rem;
         margin:0;
         @include tablet {
             //font-size: 1rem;
@@ -91,11 +55,6 @@
             @include text-alterations($size:1rem, $pad:0.5rem 3rem 0 3rem);
         }
         @include desktop {
-            
-            
-            // font-size: 1.15rem;
-            
-            // padding:0.5rem 5.75rem 0 5.75rem;
             @include text-alterations($size:1.15rem, $pad:0.5rem 5.75rem 0 5.75rem);
         }
     }
@@ -103,9 +62,6 @@
 
 
 .paragraphs-section {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
     @include flex($direction:column,$justify:center);
     @include tablet {
         padding: 0 3rem;
@@ -114,50 +70,25 @@
         padding: 0 5.7rem;
     }
     &__title{
-        // font-family: 'avenir-regular';
-        // font-size: 1.15rem;
-        // color: $primary-bg-color;
-        // font-weight: 600;
         @include font($size:1.15rem);
-        // margin-bottom:0;
-        // margin-top:1.5rem;
         margin: 1.5rem 0 0 0;
         @include tablet {
-            // font-family: 'avenir-demi';
-            // font-size: 1.5rem;
-            // color: $primary-bg-color;
-            // font-weight: 500;
             @include font($size:1.5rem);
-            // margin-bottom: 2.25rem;
-            // margin-top:3rem;
-            margin: 3rem 0 2.25rem 0; 
+            margin: 3rem 0 2.25rem 0;
         }
     }
     &__container {
-        // display: flex;
-        // flex-direction: column;
         @include flex($direction:column, $gap:1.5rem);
-        // column-gap: 1.5rem;
         @include tablet {
             column-gap:2rem;
             flex-direction: row;
         }
     }
     &__long-paragraph{
-        // font-family: 'avenir-regular';
-        // font-size: 1rem;
-        // color: $primary-bg-color;
-        // line-height: 1.75rem;
         @include font($weight:400,$line:1.75rem);
         margin-bottom: 0;
         @include tablet {
-            
-            // font-size: 0.85rem;
-            
-            // line-height: 1.55rem;
             @include font($weight:400,$size:0.85rem,$line:1.55rem);
-            // margin-top:0;
-            // margin-bottom:1rem;
             margin: 0 0 1rem 0;
         }
         @include desktop {

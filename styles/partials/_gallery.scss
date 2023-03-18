@@ -13,46 +13,23 @@
         padding:0 8rem 3rem 8rem;
     }
     &__title {
-        // font-family: 'avenir-demi';
-        // font-size:2rem;
-        // color:$primary-bg-color;
-        // font-weight: 400;
         @include font($size:2rem);
-        // margin-bottom: 1rem;
-        // margin-top:1.5rem;
         margin: 0;
         padding: 1.5rem 0 1rem 0;
         @include tablet {
-            // font-size:2.35rem;
-            // // margin-bottom: 2.25rem;
-            // // margin-top:3rem;
-            // padding:3rem 0 2.25rem 0;
             @include text-alterations($size:2.35rem, $pad:3rem 0 2.25rem 0);
         }
         @include desktop {
-            // font-size:2.5rem;
-            // padding: 2.5rem;
             @include text-alterations($size:2.5rem, $pad:3rem 0 2.25rem 0);
         }
     }
 }
 
 .gallery {
-    //display:flex;
-    //flex-wrap: wrap;
-    //column-gap: 1rem;
     row-gap:1.25rem;
-    //justify-content: center;
-    //flex-direction: column;
-    //align-items: center;
     @include flex($wrap:wrap, $justify:center, $align:center, $direction:column,$gap:1rem);
     @include tablet {
-        //display: flex;
-        //flex-wrap: wrap;
-        //flex-direction: row;
-        //align-items: normal;
         row-gap: 2rem;
-        //justify-content: space-between;
         @include flex($wrap:wrap, $justify:space-between,$gap:1rem )
     }
     @include desktop {
@@ -70,5 +47,4 @@
             width:32%;
         }
     }
-
 }
