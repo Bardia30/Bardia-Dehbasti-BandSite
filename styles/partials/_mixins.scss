@@ -39,10 +39,10 @@
     width: $w;
 }
 
-@mixin hero-bg($image:$bio-hero-url) {
-    background: $dark-filter, $image no-repeat center;
-    background-size: cover;
-}
+// @mixin hero-bg($image:$bio-hero-url) {
+//     background: $dark-filter, $image no-repeat center;
+//     background-size: cover;
+// }
 
 @mixin text-alterations($size:1.45rem, $pad:2.25rem 3rem 0 3rem, $w: 37rem) {
     font-size: $size;

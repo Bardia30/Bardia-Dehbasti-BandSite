@@ -6,7 +6,8 @@
 .hero {
     @include height-width;
     @include flex($direction:column,$justify:center, $align:flex-start);
-    @include hero-bg;
+    background: $dark-filter, $bio-hero-url no-repeat center;
+    background-size: cover;
     @include tablet {
         @include height-width($h:54vh);
     }
