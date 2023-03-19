@@ -615,7 +615,7 @@ footer {
   flex-wrap: nowrap;
   -moz-column-gap: 5vw;
        column-gap: 5vw;
-  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../../Design-Package/Assets/Images/hero-bio.jpg") no-repeat center;
+  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../Design-Package/Assets/Images/hero-bio.jpg") no-repeat center;
   background-size: cover;
 }
 @media (min-width: 768px) {
