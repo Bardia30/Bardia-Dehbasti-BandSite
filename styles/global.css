@@ -672,6 +672,24 @@ footer {
   font-style: normal;
   font-weight: 400;
 }
+@font-face {
+  font-family: "avenir";
+  src: url("../Design-Package/Assets/Font/AvenirNextLTPro-Bold.otf");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "avenir";
+  src: url("../Design-Package/Assets/Font/AvenirNextLTPro-Demi.otf");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "avenir";
+  src: url("../Design-Package/Assets/Font/AvenirNextLTPro-Regular.otf");
+  font-style: normal;
+  font-weight: 400;
+}
 body {
   margin: 0;
   box-sizing: border-box;
