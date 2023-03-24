@@ -67,6 +67,16 @@
     border-bottom: none;
   }
 }
+.nav__cta--active-show {
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid #FFFFFF;
+}
+@media (min-width: 768px) {
+  .nav__cta--active-show {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
 .nav__link {
   text-decoration: none;
   font-family: "avenir";
@@ -96,12 +106,30 @@
 @media (min-width: 768px) {
   .nav__link--current {
     border-bottom: 3px solid #FFFFFF;
-    padding: 1.5rem 0 1.5rem 0;
+    padding: 1.5rem 1rem 1.5rem 1rem;
   }
 }
 @media (min-width: 1280px) {
   .nav__link--current {
-    padding: 0 0 2.35rem 0;
+    padding: 0 1rem 2.35rem 1rem;
+  }
+}
+.nav__link--current-show {
+  font-family: "avenir";
+  font-size: 1rem;
+  font-weight: 500;
+  color: #FAFAFA;
+  line-height: normal;
+}
+@media (min-width: 768px) {
+  .nav__link--current-show {
+    border-bottom: 3px solid #FFFFFF;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .nav__link--current-show {
+    padding: 0 1rem 2.35rem 1rem;
   }
 }
 
@@ -652,6 +680,96 @@ footer {
   .hero__title {
     padding-left: 8rem;
   }
+}
+
+.hero-shows {
+  height: 28vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  -moz-column-gap: 5vw;
+       column-gap: 5vw;
+  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../../Design-Package/Assets/Images/hero-shows.jpg") no-repeat center;
+  background-size: cover;
+  background-position-y: 35%;
+}
+@media (min-width: 768px) {
+  .hero-shows {
+    height: 54vh;
+    width: 100%;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-shows {
+    height: 75vh;
+    width: 100%;
+  }
+}
+.hero-shows__album {
+  font-family: "avenir";
+  font-size: 2rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: normal;
+  padding-left: 1rem;
+}
+@media (min-width: 768px) {
+  .hero-shows__album {
+    padding-left: 3rem;
+    font-family: "avenir";
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: normal;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-shows__album {
+    padding-left: 8rem;
+  }
+}
+.hero-shows__song-name {
+  font-family: "avenir";
+  font-size: 2rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: normal;
+  padding-left: 1rem;
+}
+@media (min-width: 768px) {
+  .hero-shows__song-name {
+    padding-left: 3rem;
+    font-family: "avenir";
+    font-size: 4rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: normal;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-shows__song-name {
+    padding-left: 8rem;
+    margin-top: 0;
+  }
+}
+.hero-shows__song-stream {
+  width: 30rem;
+  height: 9rem;
+  background-color: white;
+  margin-right: 8rem;
+  border-radius: 8px;
+}
+.hero-shows__lower-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+iframe {
+  border-radius: 8px;
 }
 
 @font-face {

@@ -1,0 +1,150 @@
+@use './mixins' as *;
+@use './variables' as *;
+
+
+.convo {
+    padding: 0 1rem;
+    
+    @include tablet {
+        padding: 0 3rem;
+    }
+    @include desktop {
+        padding: 0 8rem;
+    }
+    &__title {
+        justify-self: flex-start;
+        @include font($size:2rem);
+        padding: 1.5rem 0 1rem 0;
+        margin:0;
+        @include tablet{
+            @include text-alterations($size:2.35rem, $pad:3rem 0 2.25rem 0, $w:22.133rem);
+        }
+        @include desktop {
+            @include text-alterations($size:2.5rem, $pad:3rem 0 2.25rem 0, $w:26rem);
+        }
+    }
+}
+
+
+.comment {
+    display: flex;
+    justify-content: center;
+    column-gap:1rem;
+    &__pic-placeholder{
+        margin-top:1rem;
+        @include height-width($h:3rem, $w:3rem);
+        border-radius:50%;
+        overflow: hidden;
+    }
+    &__pic{
+        height:3rem;
+    }
+    &__form{
+        display: flex;
+        flex-direction: column;
+        row-gap:0.25rem;
+    }
+    &__label{
+        text-transform: uppercase;
+        @include font($weight:400,$size:0.75rem,$color:$Secondary-text)
+
+    }
+    &__input {
+        @include height-width($w:27rem, $h:2.75rem);
+        @include font($size:0.75rem, $weight:400);
+        padding-left: 1rem;
+        background-color: $alternative-background;
+        border: 1px solid $divider-color;
+        border-radius: 4px;
+        &:focus{
+            border: 1px solid black;
+            outline:none;
+        }
+        &--error {
+            &:focus{
+                border:1px solid #D22D2D;
+            }
+        }
+    
+        &::placeholder{
+            @include font($size:0.85rem,$weight:400,$color:black)
+        }
+        &--short {
+            margin-bottom: 1.35rem;
+        }
+        &--long {
+            height: 5rem;
+            resize: none;
+            padding-top:1rem;
+        }
+    }
+}
+
+
+.btn {
+    width:10rem;
+    height:2.5rem;
+    background-color: $primary-bg-color;
+    color:$alternative-background;
+    text-transform: uppercase;
+    font-size:1rem;
+    font-weight:500;
+    border:none;
+    border-radius:4px;
+    letter-spacing: 0.05rem;
+    align-self: flex-end;
+    margin-top:1.25rem;
+    margin-bottom:0.5rem;
+    cursor: pointer;
+}
+
+
+.convo-divider {
+    height:0.125rem;
+    width: 32rem;
+    background-color: $divider-color;
+    border:none;
+    margin-top:1.5rem;
+    margin-bottom:1.5rem;
+}
+
+.previous-comment {
+    display: flex;
+    justify-content: center;
+    column-gap:1rem;
+    
+    &__pic-placeholder{
+        margin-top:1rem;
+        @include height-width($h:3rem, $w:3rem);
+        border-radius:50%;
+        overflow: hidden;
+        background-color: $divider-color;
+    }
+    &__texts{
+        display: flex;
+        flex-direction:column;
+
+    }
+    &__texts-top{
+        display:flex;
+        justify-content: space-between;
+    }
+
+    &__name{
+        margin-bottom:0;
+        @include font($size:0.85rem);
+    }
+    &__date{
+        margin-bottom:0;
+        @include font($size:0.85rem, $color:$divider-color,$weight:400);
+    }
+    
+    &__long-paragraph{
+        width:28rem;
+        margin-top: 0.5rem;
+        margin-bottom:0;
+        @include font($size:0.85rem, $weight:400, $line:1.5rem);
+
+    }
+
+}
