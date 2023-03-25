@@ -1,0 +1,143 @@
+@use './mixins' as *;
+@use './variables' as *;
+
+
+.shows {
+    padding: 0 1rem;
+    display:flex;
+    @include tablet {
+        padding: 0 3rem;
+        flex-direction: column;
+    }
+    @include desktop {
+        padding: 0 8rem;
+        flex-direction: row;
+    }
+    &__title {
+        @include font($size:2rem);
+        padding: 1.5rem 0 1rem 0;
+        margin:0;
+        @include tablet{
+            @include text-alterations($size:2.35rem, $pad:3rem 0 2.25rem 0, $w:22.133rem);
+        }
+        @include desktop {
+            @include text-alterations($size:2.5rem, $pad:3rem 0 2.25rem 0, $w:17rem);
+        }
+    }
+    &__right-section{
+        padding-bottom: 1.5rem;
+    }
+}
+
+.column-entries {
+    display:flex;
+    width:35.5rem;
+    padding-top:3rem;
+    padding-left:2rem;
+    padding-bottom:2.5rem;
+    @include tablet {
+        padding:0;
+        padding-bottom:1rem;
+    }
+    @include desktop{
+        padding-top:3rem;
+        padding-left:2rem;
+        padding-bottom:2.5rem;
+    }
+    &__title{
+        text-transform: uppercase;
+        @include font($size:0.85rem, $weight:500, $color:$Secondary-text);
+        &--first{
+            margin-right: 13.5rem;
+            @include tablet {
+                margin-right: 11.85rem;
+            }
+            @include desktop {
+                margin-right: 13.5rem;
+            }
+        }
+        &--second{
+            margin-right: 10.75rem;
+            @include tablet {
+                margin-right: 10.85rem;
+            }
+            @include desktop {
+                margin-right: 10.75rem;
+            }
+        }
+    }
+}
+.shows-row {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width:53rem;
+    padding-left:2rem;
+    padding-right:2rem;
+    @include tablet {
+        padding-left: 0;
+        padding-right: 0;
+        width:50rem
+    }
+    @include desktop{
+        padding-left:2rem;
+        padding-right:2rem;
+        width:53rem;
+
+    }
+    &__date{
+        width:10rem;
+        @include font($size:1rem, $weight:500);
+    }
+
+    &__venue-location-section{
+        display:flex;
+        justify-content: flex-start;
+        width:22rem;
+        align-items: center;
+    }
+    &__venue{
+        @include font($size:1rem, $weight:400);
+        width:22rem;
+    }
+    &__location {
+        @include font($size:1rem, $weight:400);
+        width:13rem;
+
+    }
+    
+}
+
+
+.show-divider {
+    height:0.125rem;
+    width: 55rem;
+    background-color: $divider-color;
+    border:none;
+    margin-top:1.5rem;
+    margin-bottom:1.5rem;
+    @include tablet {
+        margin-top:1rem;
+        margin-bottom:1rem;
+        width: 51rem;
+    }
+    @include desktop {
+        margin-top:1.5rem;
+        margin-bottom:1.5rem;
+        width: 55rem;
+    }
+}
+
+.btn {
+    width:10rem;
+    height:2.5rem;
+    background-color: $primary-bg-color;
+    color:$alternative-background;
+    text-transform: uppercase;
+    font-size:1rem;
+    font-weight:500;
+    border:none;
+    border-radius:4px;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+}

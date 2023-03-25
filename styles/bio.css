@@ -124,7 +124,7 @@
 @media (min-width: 768px) {
   .nav__link--current-show {
     border-bottom: 3px solid #FFFFFF;
-    padding: 1.5rem 1rem 1.5rem 1rem;
+    padding: 1.5rem 0.25rem 1.5rem 0.25rem;
   }
 }
 @media (min-width: 1280px) {
@@ -683,7 +683,7 @@ footer {
 }
 
 .hero-shows {
-  height: 28vh;
+  height: 38vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -698,7 +698,7 @@ footer {
 }
 @media (min-width: 768px) {
   .hero-shows {
-    height: 54vh;
+    height: 60vh;
     width: 100%;
   }
 }
@@ -710,11 +710,13 @@ footer {
 }
 .hero-shows__album {
   font-family: "avenir";
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 400;
   color: #FFFFFF;
   line-height: normal;
   padding-left: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 @media (min-width: 768px) {
   .hero-shows__album {
@@ -724,11 +726,19 @@ footer {
     font-weight: 500;
     color: #FFFFFF;
     line-height: normal;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 @media (min-width: 1280px) {
   .hero-shows__album {
     padding-left: 8rem;
+    margin-bottom: 1rem;
+    font-family: "avenir";
+    font-size: 2rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: normal;
   }
 }
 .hero-shows__song-name {
@@ -737,7 +747,9 @@ footer {
   font-weight: 500;
   color: #FFFFFF;
   line-height: normal;
-  padding-left: 1rem;
+  width: 20rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 @media (min-width: 768px) {
   .hero-shows__song-name {
@@ -747,29 +759,63 @@ footer {
     font-weight: 500;
     color: #FFFFFF;
     line-height: normal;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    width: 34rem;
   }
 }
 @media (min-width: 1280px) {
   .hero-shows__song-name {
     padding-left: 8rem;
     margin-top: 0;
+    width: 32rem;
   }
 }
 .hero-shows__song-stream {
-  width: 30rem;
-  height: 9rem;
+  width: 24rem;
+  height: 8rem;
   background-color: white;
   margin-right: 8rem;
   border-radius: 8px;
 }
+@media (min-width: 768px) {
+  .hero-shows__song-stream {
+    margin-left: 3rem;
+    width: 30rem;
+    height: 9rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-shows__song-stream {
+    margin-left: 0;
+  }
+}
 .hero-shows__lower-section {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   width: 100vw;
+  padding-left: 1rem;
+}
+@media (min-width: 768px) {
+  .hero-shows__lower-section {
+    padding-left: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-shows__lower-section {
+    flex-direction: row;
+  }
 }
 
 iframe {
   border-radius: 8px;
+  height: 8rem;
+}
+@media (min-width: 768px) {
+  iframe {
+    height: 9rem;
+  }
 }
 
 @font-face {
@@ -828,7 +874,6 @@ body {
   }
 }
 .convo__title {
-  justify-self: flex-start;
   font-family: "avenir";
   font-size: 2rem;
   font-weight: 500;
@@ -841,7 +886,7 @@ body {
   .convo__title {
     font-size: 2.35rem;
     padding: 3rem 0 2.25rem 0;
-    width: 22.133rem;
+    width: 24rem;
   }
 }
 @media (min-width: 1280px) {
@@ -883,7 +928,7 @@ body {
 }
 .comment__input {
   height: 2.75rem;
-  width: 27rem;
+  width: 20rem;
   font-family: "avenir";
   font-size: 0.75rem;
   font-weight: 400;
@@ -894,6 +939,16 @@ body {
   border: 1px solid #E1E1E1;
   border-radius: 4px;
 }
+@media (min-width: 768px) {
+  .comment__input {
+    width: 37rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comment__input {
+    width: 32rem;
+  }
+}
 .comment__input:focus {
   border: 1px solid black;
   outline: none;
@@ -903,17 +958,33 @@ body {
 }
 .comment__input::-moz-placeholder {
   font-family: "avenir";
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 400;
   color: black;
   line-height: normal;
 }
 .comment__input::placeholder {
   font-family: "avenir";
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 400;
   color: black;
   line-height: normal;
+}
+@media (min-width: 1280px) {
+  .comment__input::-moz-placeholder {
+    font-family: "avenir";
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: black;
+    line-height: normal;
+  }
+  .comment__input::placeholder {
+    font-family: "avenir";
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: black;
+    line-height: normal;
+  }
 }
 .comment__input--short {
   margin-bottom: 1.35rem;
@@ -925,13 +996,15 @@ body {
 }
 
 .btn {
-  width: 10rem;
-  height: 2.5rem;
+  width: 100%;
+  height: 3.25rem;
   background-color: #323232;
-  color: #FAFAFA;
   text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: 500;
+  font-family: "avenir";
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #FAFAFA;
+  line-height: normal;
   border: none;
   border-radius: 4px;
   letter-spacing: 0.05rem;
@@ -940,14 +1013,35 @@ body {
   margin-bottom: 0.5rem;
   cursor: pointer;
 }
+@media (min-width: 768px) {
+  .btn {
+    width: 10rem;
+    height: 2.5rem;
+    font-family: "avenir";
+    font-size: 1rem;
+    font-weight: 400;
+    color: #FAFAFA;
+    line-height: normal;
+  }
+}
 
 .convo-divider {
+  width: 100%;
   height: 0.125rem;
-  width: 32rem;
   background-color: #E1E1E1;
   border: none;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+  .convo-divider {
+    width: 42rem;
+  }
+}
+@media (min-width: 1280px) {
+  .convo-divider {
+    width: 32rem;
+  }
 }
 
 .previous-comment {
@@ -975,26 +1069,64 @@ body {
 .previous-comment__name {
   margin-bottom: 0;
   font-family: "avenir";
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 500;
   color: #323232;
   line-height: normal;
 }
+@media (min-width: 1280px) {
+  .previous-comment__name {
+    font-family: "avenir";
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #323232;
+    line-height: normal;
+  }
+}
 .previous-comment__date {
   margin-bottom: 0;
   font-family: "avenir";
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 400;
-  color: #E1E1E1;
+  color: #AFAFAF;
   line-height: normal;
 }
+@media (min-width: 1280px) {
+  .previous-comment__date {
+    font-family: "avenir";
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #AFAFAF;
+    line-height: normal;
+  }
+}
 .previous-comment__long-paragraph {
-  width: 28rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0;
+  width: 21rem;
   font-family: "avenir";
-  font-size: 0.85rem;
+  font-size: 1.15rem;
   font-weight: 400;
   color: #323232;
   line-height: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .previous-comment__long-paragraph {
+    width: 38.125rem;
+    font-family: "avenir";
+    font-size: 1rem;
+    font-weight: 400;
+    color: #323232;
+    line-height: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .previous-comment__long-paragraph {
+    width: 33rem;
+    font-family: "avenir";
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #323232;
+    line-height: 1.5rem;
+  }
 }/*# sourceMappingURL=bio.css.map */
