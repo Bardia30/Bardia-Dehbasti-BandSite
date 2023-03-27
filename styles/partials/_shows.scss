@@ -5,9 +5,9 @@
 .shows {
     padding: 0 1rem;
     display:flex;
+    flex-direction: column;
     @include tablet {
         padding: 0 3rem;
-        flex-direction: column;
     }
     @include desktop {
         padding: 0 8rem;
@@ -15,9 +15,10 @@
     }
     &__title {
         @include font($size:2rem);
-        padding: 1.5rem 0 1rem 0;
+        padding: 3rem 0 1rem 0;
         margin:0;
         @include tablet{
+            padding: 1.5rem 0 1rem 0;
             @include text-alterations($size:2.35rem, $pad:3rem 0 2.25rem 0, $w:22.133rem);
         }
         @include desktop {
@@ -30,12 +31,14 @@
 }
 
 .column-entries {
-    display:flex;
+    display: none;
+    
     width:35.5rem;
     padding-top:3rem;
     padding-left:2rem;
     padding-bottom:2.5rem;
     @include tablet {
+        display:flex;
         padding:0;
         padding-bottom:1rem;
     }
@@ -69,15 +72,18 @@
 }
 .shows-row {
     display:flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     width:53rem;
-    padding-left:2rem;
     padding-right:2rem;
     @include tablet {
         padding-left: 0;
         padding-right: 0;
-        width:50rem
+        width:50rem;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
     }
     @include desktop{
         padding-left:2rem;
@@ -88,24 +94,51 @@
     &__date{
         width:10rem;
         @include font($size:1rem, $weight:500);
+        padding-bottom:0.75rem;
+        @include tablet{
+            padding-bottom:0;
+        }
     }
 
     &__venue-location-section{
         display:flex;
         justify-content: flex-start;
         width:22rem;
-        align-items: center;
+        align-items: flex-start;
+        flex-direction: column;
+        @include tablet {
+            display:flex;
+            justify-content: flex-start;
+            width:22rem;
+            align-items: center;
+            flex-direction:row
+        }
     }
     &__venue{
         @include font($size:1rem, $weight:400);
         width:22rem;
+        padding-bottom:0.75rem;
+        @include tablet{
+            padding-bottom:0;
+        }
     }
     &__location {
         @include font($size:1rem, $weight:400);
         width:13rem;
+        padding-bottom:0.75rem;
+        @include tablet{
+            padding-bottom:0;
+        }
 
     }
-    
+    &__title {
+        text-transform: uppercase;
+        @include font($size:0.8rem, $weight:500, $color:$Secondary-text);
+        margin:0;
+        @include tablet{
+            display: none;
+        }
+    }
 }
 
 
@@ -129,15 +162,21 @@
 }
 
 .btn {
-    width:10rem;
-    height:2.5rem;
+    width:92vw;
+    height:3.25rem;
     background-color: $primary-bg-color;
-    color:$alternative-background;
+    //color:$alternative-background;
     text-transform: uppercase;
-    font-size:1rem;
-    font-weight:500;
+    // font-size:1rem;
+    // font-weight:500;
+    @include font($size:1.25rem, $color:$alternative-background, $weight:400);
     border:none;
     border-radius:4px;
     letter-spacing: 0.05rem;
     cursor: pointer;
+    @include tablet{
+        @include font($size:1rem, $color:$alternative-background, $weight:400);
+        width:10rem;
+        height:2.5rem;
+    }
 }
