@@ -32,6 +32,14 @@ const showsArray = [
 ]
 
 
+
+const addNewChildElement = (elementType, className, innerText) => {
+    let newElement = document.createElement(elementType);
+    newElement .classList.add(className);
+    newElement .innerText = innerText;
+    return newElement;
+}
+
 //finding the <div class="shows__right-section"> and assigning it to a variable
 const parentDiv = document.querySelector(".shows__right-section");
 
@@ -46,26 +54,20 @@ for (let i = 0; i < showsArray.length; i++){
     //, giving it a new class name
     const newSection = document.createElement("section");
     newSection.classList.add("shows-row");
-    //appending the section element as a child to parentDiv
-    // parentDiv.appendChild(newSection);
+    
 
-    //create a new h3 element with class shows-row__title for date
-    const headerDate = document.createElement("h3");
-    headerDate.classList.add("shows-row__title");
-    headerDate.innerText = 'date';
+    // create a new h3 element with class shows-row__title for date
+    const headerDate = addNewChildElement("h3","shows-row__title",'date');
     newSection.appendChild(headerDate);
+    
     
     //create a new p element with class show-row__date
     //and giving it a value from our showsArray
-    const paragraphDate = document.createElement("p");
-    paragraphDate.classList.add("shows-row__date");
-    paragraphDate.innerText = date;
+    const paragraphDate = addNewChildElement("h3","shows-row__date",date);
     newSection.appendChild(paragraphDate);
 
     //create a new h3 element with class shows-row__tile for venue
-    const headerVenue = document.createElement("h3");
-    headerVenue.classList.add("shows-row__title");
-    headerVenue.innerText = 'venue';
+    const headerVenue = addNewChildElement("h3","shows-row__title",'venue');
     newSection.appendChild(headerVenue);
 
     //create a new div with class shows-row__venue-location-section
@@ -74,22 +76,17 @@ for (let i = 0; i < showsArray.length; i++){
 
     //create a new p element for venue and assigning the venue from shows array
     //and adding this element to childDiv
-    const paragraphVenue = document.createElement("p");
-    paragraphVenue.classList.add("shows-row__venue");
-    paragraphVenue.innerText = venue;
+    const paragraphVenue = addNewChildElement("p","shows-row__venue",venue );
     childDiv.appendChild(paragraphVenue);
 
+
     //create a new header element for location
-    const headerLocation = document.createElement("h3");
-    headerLocation.classList.add("shows-row__title");
-    headerLocation.innerText = 'location';
+    const headerLocation = addNewChildElement("h3","shows-row__title",'location' );
     childDiv.appendChild(headerLocation);
 
     ////create a new p element for location and assigning the location from shows array
     //and adding this element to childDiv
-    const paragraphLocation = document.createElement("p");
-    paragraphLocation.classList.add("shows-row__venue");
-    paragraphLocation.innerText = location;
+    const paragraphLocation = addNewChildElement("p", "shows-row__venue", location );
     childDiv.appendChild(paragraphLocation);
 
     //adding childDiv to newSection
@@ -120,4 +117,3 @@ for (let i = 0; i < showsArray.length; i++){
 }
 
 
-//TODO: need to add functions to the code above 
