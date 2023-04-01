@@ -1,44 +1,47 @@
 let commentsArray = [
     {
         name: "Connor Walton",
-        comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-        date: 1613538000000
+        commentText: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+        timestamp: 1613538000000
     },
     {
         name: "Emilie Beach",
-        comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-        date: 1578546000000
+        commentText: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+        timestamp: 1578546000000
     },
     {
         name: "Miles Acosta",
-        comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-        date: 1608440400000
+        commentText: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+        timestamp: 1608440400000
     }
 ];
 
-function convertDate(d) {
-    const newDate = new Date(d);
-    const dateConverted = newDate.toLocaleDateString();
+
+//a function to return a converted timestamp to local date string
+const  convertDate = d => {
+    const newDate = new Date(d); //create a new Date object instance with the time set to a specific timestap in numerical format
+    const dateConverted = newDate.toLocaleDateString(); //convert to x/xx/xxxx date format
     return dateConverted;
-
-}
-
+};
 
 
-function renderDOM(){
-    for (let i = 0; i < commentsArray.length; i++){
-        displayComment(commentsArray[i]);
-    }
+//a function that loops through each item in commentsArray
+// with .forEach() method and uses displayComment function 
+//to render the comments on DOM
+const renderCommentsSection = () => {
+    commentsArray.forEach((comment) => {
+        displayComment(comment);
+    });
 };
 
 
 
 
 
-function displayComment(commentObject){
+const displayComment = (commentObject) => {
     let name = commentObject.name;
-    let comment = commentObject.comment;
-    let date = convertDate(commentObject.date);
+    let comment = commentObject.commentText;
+    let date = convertDate(commentObject.timestamp);
 
     const newParentDiv = document.createElement("div");
     newParentDiv.classList.add("previous-comment");
@@ -83,7 +86,7 @@ function displayComment(commentObject){
 
 
 
-function clearDOM(){
+const clearCommentsSection = () => {
     const allCommentDivs = sectionParent.querySelectorAll(".previous-comment");
     const allHorRules = sectionParent.querySelectorAll(".convo-divider");
     for (i = 0; i < allCommentDivs.length;i++) {
@@ -103,9 +106,9 @@ const button = document.querySelector(".comment__btn");
 
 
 
-renderDOM();
+renderCommentsSection();
 
-function generateTodayDate(){
+const generateTodayDate = () => {
     const todayDate = new Date();
     return todayDate[Symbol.toPrimitive]('number');
 }
@@ -119,17 +122,17 @@ form.addEventListener('submit', (e) => {
     
     
 
-    let dateOfComment = convertDate(generateTodayDate());
+    let dateOfComment = generateTodayDate();
 
     let newCommentObject = {};
     newCommentObject.name = userName;
-    newCommentObject.comment = userComments;
-    newCommentObject.date = dateOfComment;
+    newCommentObject.commentText = userComments;
+    newCommentObject.timestamp = dateOfComment;
     commentsArray.unshift(newCommentObject);
 
 
-    clearDOM();
-    renderDOM();
+    clearCommentsSection(); //fix these 
+    renderCommentsSection();
 
     
 
