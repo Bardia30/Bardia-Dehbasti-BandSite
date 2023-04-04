@@ -900,6 +900,9 @@ body {
 .comment {
   display: flex;
   justify-content: center;
+  align-items: normal;
+  flex-direction: row;
+  flex-wrap: nowrap;
   -moz-column-gap: 1rem;
        column-gap: 1rem;
 }

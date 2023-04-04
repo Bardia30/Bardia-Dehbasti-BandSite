@@ -90,9 +90,7 @@
         }
     }
     &__lower-section {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
+        @include flex($direction:column, $justify:space-between);
         width:100vw;
         padding-left:1rem;
         @include tablet {

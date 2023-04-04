@@ -793,7 +793,11 @@ footer {
 .hero-shows__lower-section {
   display: flex;
   justify-content: space-between;
+  align-items: normal;
   flex-direction: column;
+  flex-wrap: nowrap;
+  -moz-column-gap: 5vw;
+       column-gap: 5vw;
   width: 100vw;
   padding-left: 1rem;
 }
