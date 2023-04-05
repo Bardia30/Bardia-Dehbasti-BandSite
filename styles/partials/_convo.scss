@@ -36,7 +36,7 @@
         height:3rem;
     }
     &__form{
-        @include flex($direction:column, $row:0.25rem)
+        @include flex($direction:column);
     }
     &__label{
         text-transform: uppercase;
@@ -114,7 +114,7 @@
         background-color: $divider-color;
     }
     &__texts{
-        @include flex($direction:flex);
+        @include flex($direction:column);
 
     }
     &__texts-top{

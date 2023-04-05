@@ -1,17 +1,17 @@
 let commentsArray = [
     {
         name: "Connor Walton",
-        commentText: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+        comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
         timestamp: 1613538000000
     },
     {
         name: "Emilie Beach",
-        commentText: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+        comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
         timestamp: 1578546000000
     },
     {
         name: "Miles Acosta",
-        commentText: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+        comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
         timestamp: 1608440400000
     }
 ];
@@ -43,9 +43,9 @@ const sectionParent = document.querySelector(".convo");
 //a function that takes in an object as argument
 // and creates displays a single comment block on the webpage
 const displayComment = (commentObject) => {
-    //storing the name, commentText and timestamp of each object from the commentsArray
+    //storing the name, comment and timestamp of each object from the commentsArray
     let name = commentObject.name; 
-    let comment = commentObject.commentText;
+    let comment = commentObject.comment;
     let date = convertDate(commentObject.timestamp); //converting the timestamp to m/dd/yyyy format
 
     //create a new parent div element called newParentDiv 
@@ -166,8 +166,8 @@ form.addEventListener('submit', (e) => {
     let newCommentObject = {};
     //the name property value is equal to the value entered by the user in the Name field
     newCommentObject.name = userName;
-    //the commentText property value is equal to userComments entered by the user
-    newCommentObject.commentText = userComments;
+    //the comment property value is equal to userComments entered by the user
+    newCommentObject.comment = userComments;
     //the timestamp property value is equal to dateOfComment which is the today's date converted from numeric format to m/dd/yyyy format
     newCommentObject.timestamp = dateOfComment;
     commentsArray.unshift(newCommentObject);

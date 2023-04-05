@@ -793,7 +793,11 @@ footer {
 .hero-shows__lower-section {
   display: flex;
   justify-content: space-between;
+  align-items: normal;
   flex-direction: column;
+  flex-wrap: nowrap;
+  -moz-column-gap: 5vw;
+       column-gap: 5vw;
   width: 100vw;
   padding-left: 1rem;
 }
@@ -918,8 +922,12 @@ body {
 }
 .comment__form {
   display: flex;
+  justify-content: normal;
+  align-items: normal;
   flex-direction: column;
-  row-gap: 0.25rem;
+  flex-wrap: nowrap;
+  -moz-column-gap: 5vw;
+       column-gap: 5vw;
 }
 .comment__label {
   text-transform: uppercase;
@@ -1050,6 +1058,9 @@ body {
 .previous-comment {
   display: flex;
   justify-content: center;
+  align-items: normal;
+  flex-direction: row;
+  flex-wrap: nowrap;
   -moz-column-gap: 1rem;
        column-gap: 1rem;
 }
@@ -1063,11 +1074,21 @@ body {
 }
 .previous-comment__texts {
   display: flex;
+  justify-content: normal;
+  align-items: normal;
   flex-direction: column;
+  flex-wrap: nowrap;
+  -moz-column-gap: 5vw;
+       column-gap: 5vw;
 }
 .previous-comment__texts-top {
   display: flex;
   justify-content: space-between;
+  align-items: normal;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  -moz-column-gap: 5vw;
+       column-gap: 5vw;
 }
 .previous-comment__name {
   margin-bottom: 0;
