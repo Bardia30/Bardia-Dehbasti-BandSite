@@ -14,13 +14,16 @@
     }
     &__logo{
         padding: 1.5rem 0;
-        transform: scale(1.25);
+        // transform: scale(1.25);
+        width:8.9rem;
         @include tablet {
-            transform: scale(1);
+            // transform: scale(1);
+            width:7.125rem;
             margin-right:2rem;
         }
         @include desktop{
-            transform:scale(1.15);
+            // transform:scale(1.15);
+            width:8.25rem;
             margin-right:0.5rem;
         }
     }
@@ -71,7 +74,7 @@
                 padding: 1.5rem 1rem 1.5rem 1rem;
             }
             @include desktop {
-                padding: 0 1rem 2.35rem 1rem;
+                padding: 0 1rem 2.5rem 1rem;
         }
         }
         &--current-show {
