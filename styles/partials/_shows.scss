@@ -3,7 +3,6 @@
 
 
 .shows {
-    padding: 0 1rem;
     display:flex;
     flex-direction: column;
     @include tablet {
@@ -15,11 +14,10 @@
     }
     &__title {
         @include font($size:2rem);
-        padding: 3rem 0 1rem 0;
+        padding: 3rem 0 1rem 1rem;
         margin:0;
         @include tablet{
-            padding: 1.5rem 0 1rem 0;
-            @include text-alterations($size:2.35rem, $pad:3rem 0 2.25rem 0, $w:22.133rem);
+            @include text-alterations($size:2.35rem, $pad:3rem 0 2.25rem 1rem, $w:22.133rem);
         }
         @include desktop {
             @include text-alterations($size:2.5rem, $pad:3rem 0 2.25rem 0, $w:17rem);
@@ -39,8 +37,9 @@
     padding-bottom:2.5rem;
     @include tablet {
         display:flex;
-        padding:0;
+        padding-top:0;
         padding-bottom:1rem;
+        padding-left:1.125rem;
     }
     @include desktop{
         padding-top:3rem;
@@ -76,19 +75,32 @@
     justify-content: space-between;
     align-items: flex-start;
     width:53rem;
-    padding-right:2rem;
+    padding: 1rem;
+    border-bottom: solid 1px $divider-color;
+    transition: background-color 0.5s ease-in-out;
+    cursor: pointer;
+    &:hover{
+        background-color: $alternative-background;
+    }
+    &--selected{
+        background-color: $divider-color;
+        transition:none;
+        &:hover{
+            background-color: $divider-color;
+        }
+    }
     @include tablet {
-        padding-left: 0;
-        padding-right: 0;
+        padding: 1.5rem 1.125rem;
+        border-bottom: solid 1px $divider-color;
         width:50rem;
         justify-content: space-between;
         align-items: center;
         flex-direction: row;
     }
     @include desktop{
-        padding-left:2rem;
-        padding-right:2rem;
         width:53rem;
+        padding: 1.5rem 1.125rem;
+        border-bottom: solid 1px $divider-color;
 
     }
     &__date{
@@ -142,24 +154,25 @@
 }
 
 
-.show-divider {
-    height:0.125rem;
-    width: 55rem;
-    background-color: $divider-color;
-    border:none;
-    margin-top:1.5rem;
-    margin-bottom:1.5rem;
-    @include tablet {
-        margin-top:1rem;
-        margin-bottom:1rem;
-        width: 51rem;
-    }
-    @include desktop {
-        margin-top:1.5rem;
-        margin-bottom:1.5rem;
-        width: 55rem;
-    }
-}
+// .show-divider {
+//     height:0.125rem;
+//     width: 55rem;
+//     background-color: $divider-color;
+//     border:none;
+//     margin-top:1.5rem;
+//     margin-bottom:1.5rem;
+//     @include tablet {
+//         margin-top:1rem;
+//         margin-bottom:1rem;
+//         width: 51rem;
+//     }
+//     @include desktop {
+//         // margin-top:1.5rem;
+//         // margin-bottom:1.5rem;
+//         width: 55rem;
+        
+//     }
+// }
 
 .btn {
     width:92vw;

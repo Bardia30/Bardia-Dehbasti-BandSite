@@ -865,7 +865,6 @@ body {
 }
 
 .shows {
-  padding: 0 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -886,14 +885,13 @@ body {
   font-weight: 500;
   color: #323232;
   line-height: normal;
-  padding: 3rem 0 1rem 0;
+  padding: 3rem 0 1rem 1rem;
   margin: 0;
 }
 @media (min-width: 768px) {
   .shows__title {
-    padding: 1.5rem 0 1rem 0;
     font-size: 2.35rem;
-    padding: 3rem 0 2.25rem 0;
+    padding: 3rem 0 2.25rem 1rem;
     width: 22.133rem;
   }
 }
@@ -918,8 +916,9 @@ body {
 @media (min-width: 768px) {
   .column-entries {
     display: flex;
-    padding: 0;
+    padding-top: 0;
     padding-bottom: 1rem;
+    padding-left: 1.125rem;
   }
 }
 @media (min-width: 1280px) {
@@ -970,12 +969,25 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   width: 53rem;
-  padding-right: 2rem;
+  padding: 1rem;
+  border-bottom: solid 1px #E1E1E1;
+  transition: background-color 0.5s ease-in-out;
+  cursor: pointer;
+}
+.shows-row:hover {
+  background-color: #FAFAFA;
+}
+.shows-row--selected {
+  background-color: #E1E1E1;
+  transition: none;
+}
+.shows-row--selected:hover {
+  background-color: #E1E1E1;
 }
 @media (min-width: 768px) {
   .shows-row {
-    padding-left: 0;
-    padding-right: 0;
+    padding: 1.5rem 1.125rem;
+    border-bottom: solid 1px #E1E1E1;
     width: 50rem;
     justify-content: space-between;
     align-items: center;
@@ -984,9 +996,9 @@ body {
 }
 @media (min-width: 1280px) {
   .shows-row {
-    padding-left: 2rem;
-    padding-right: 2rem;
     width: 53rem;
+    padding: 1.5rem 1.125rem;
+    border-bottom: solid 1px #E1E1E1;
   }
 }
 .shows-row__date {
@@ -1059,29 +1071,6 @@ body {
 @media (min-width: 768px) {
   .shows-row__title {
     display: none;
-  }
-}
-
-.show-divider {
-  height: 0.125rem;
-  width: 55rem;
-  background-color: #E1E1E1;
-  border: none;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-@media (min-width: 768px) {
-  .show-divider {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    width: 51rem;
-  }
-}
-@media (min-width: 1280px) {
-  .show-divider {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    width: 55rem;
   }
 }
 

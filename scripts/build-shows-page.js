@@ -111,9 +111,24 @@ for (let i = 0; i < showsArray.length; i++){
     parentDiv.appendChild(newSection);
 
     //create a new horizontal rule element with a className of "show-divider"
-    const horizontalRule = document.createElement("hr");
-    horizontalRule.classList.add("show-divider");
-    parentDiv.appendChild(horizontalRule);
+    // const horizontalRule = document.createElement("hr");
+    // horizontalRule.classList.add("show-divider");
+    // parentDiv.appendChild(horizontalRule);
 }
 
 
+const showsRow = document.getElementsByClassName('shows-row');
+
+for (let i=0; i<showsRow.length; i++){
+    let selectedRow = null;
+    showsRow[i].addEventListener('click', (e)=>{
+        showsRow[i].classList.add("shows-row--selected")
+        selectedRow = e.target;
+        if (selectedRow !== null){
+            selectedRow.style.backgroundColor = "none";
+        };
+        
+        console.log(selectedRow);
+    })
+    
+}
