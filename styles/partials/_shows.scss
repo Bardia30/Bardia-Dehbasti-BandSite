@@ -43,41 +43,28 @@
     }
     @include desktop{
         padding-top:3rem;
-        padding-left:2rem;
         padding-bottom:2.5rem;
     }
     &__title{
         text-transform: uppercase;
         @include font($size:0.85rem, $weight:500, $color:$Secondary-text);
         &--first{
-            margin-right: 13.5rem;
-            @include tablet {
-                margin-right: 11.85rem;
-            }
+            margin-right: 11.85rem;
             @include desktop {
                 margin-right: 13.5rem;
             }
         }
         &--second{
-            margin-right: 10.75rem;
-            @include tablet {
-                margin-right: 10.85rem;
-            }
-            @include desktop {
-                margin-right: 10.75rem;
-            }
+            margin-right: 8rem
         }
     }
 }
 .shows-row {
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+    @include flex($direction:column, $justify:space-between, $align: flex-start);
     width:53rem;
     padding: 1rem;
-    border-bottom: solid 1px $divider-color;
-    transition: background-color 0.5s ease-in-out;
+    border-bottom: $border-bottom;
+    transition: $transition;
     cursor: pointer;
     &:hover{
         background-color: $alternative-background;
@@ -91,7 +78,6 @@
     }
     @include tablet {
         padding: 1.5rem 1.125rem;
-        border-bottom: solid 1px $divider-color;
         width:50rem;
         justify-content: space-between;
         align-items: center;
@@ -99,9 +85,6 @@
     }
     @include desktop{
         width:53rem;
-        padding: 1.5rem 1.125rem;
-        border-bottom: solid 1px $divider-color;
-
     }
     &__date{
         width:10rem;
@@ -113,14 +96,9 @@
     }
 
     &__venue-location-section{
-        display:flex;
-        justify-content: flex-start;
         width:22rem;
-        align-items: flex-start;
-        flex-direction: column;
+        @include flex($justify:flex-start, $align:flex-start, $direction:column);
         @include tablet {
-            display:flex;
-            justify-content: flex-start;
             width:22rem;
             align-items: center;
             flex-direction:row
@@ -154,39 +132,9 @@
 }
 
 
-// .show-divider {
-//     height:0.125rem;
-//     width: 55rem;
-//     background-color: $divider-color;
-//     border:none;
-//     margin-top:1.5rem;
-//     margin-bottom:1.5rem;
-//     @include tablet {
-//         margin-top:1rem;
-//         margin-bottom:1rem;
-//         width: 51rem;
-//     }
-//     @include desktop {
-//         // margin-top:1.5rem;
-//         // margin-bottom:1.5rem;
-//         width: 55rem;
-        
-//     }
-// }
 
 .btn {
-    width:92vw;
-    height:3.25rem;
-    background-color: $primary-bg-color;
-    //color:$alternative-background;
-    text-transform: uppercase;
-    // font-size:1rem;
-    // font-weight:500;
-    @include font($size:1.25rem, $color:$alternative-background, $weight:400);
-    border:none;
-    border-radius:4px;
-    letter-spacing: 0.05rem;
-    cursor: pointer;
+    @include btn($w:92vw);
     @include tablet{
         @include font($size:1rem, $color:$alternative-background, $weight:400);
         width:10rem;

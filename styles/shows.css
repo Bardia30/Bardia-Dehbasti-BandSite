@@ -924,7 +924,6 @@ body {
 @media (min-width: 1280px) {
   .column-entries {
     padding-top: 3rem;
-    padding-left: 2rem;
     padding-bottom: 2.5rem;
   }
 }
@@ -937,12 +936,7 @@ body {
   line-height: normal;
 }
 .column-entries__title--first {
-  margin-right: 13.5rem;
-}
-@media (min-width: 768px) {
-  .column-entries__title--first {
-    margin-right: 11.85rem;
-  }
+  margin-right: 11.85rem;
 }
 @media (min-width: 1280px) {
   .column-entries__title--first {
@@ -950,24 +944,17 @@ body {
   }
 }
 .column-entries__title--second {
-  margin-right: 10.75rem;
-}
-@media (min-width: 768px) {
-  .column-entries__title--second {
-    margin-right: 10.85rem;
-  }
-}
-@media (min-width: 1280px) {
-  .column-entries__title--second {
-    margin-right: 10.75rem;
-  }
+  margin-right: 8rem;
 }
 
 .shows-row {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  -moz-column-gap: 5vw;
+       column-gap: 5vw;
   width: 53rem;
   padding: 1rem;
   border-bottom: solid 1px #E1E1E1;
@@ -987,7 +974,6 @@ body {
 @media (min-width: 768px) {
   .shows-row {
     padding: 1.5rem 1.125rem;
-    border-bottom: solid 1px #E1E1E1;
     width: 50rem;
     justify-content: space-between;
     align-items: center;
@@ -997,8 +983,6 @@ body {
 @media (min-width: 1280px) {
   .shows-row {
     width: 53rem;
-    padding: 1.5rem 1.125rem;
-    border-bottom: solid 1px #E1E1E1;
   }
 }
 .shows-row__date {
@@ -1016,16 +1000,17 @@ body {
   }
 }
 .shows-row__venue-location-section {
+  width: 22rem;
   display: flex;
   justify-content: flex-start;
-  width: 22rem;
   align-items: flex-start;
   flex-direction: column;
+  flex-wrap: nowrap;
+  -moz-column-gap: 5vw;
+       column-gap: 5vw;
 }
 @media (min-width: 768px) {
   .shows-row__venue-location-section {
-    display: flex;
-    justify-content: flex-start;
     width: 22rem;
     align-items: center;
     flex-direction: row;
@@ -1087,7 +1072,14 @@ body {
   border: none;
   border-radius: 4px;
   letter-spacing: 0.05rem;
+  align-self: flex-end;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
   cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+}
+.btn:hover {
+  background-color: black;
 }
 @media (min-width: 768px) {
   .btn {

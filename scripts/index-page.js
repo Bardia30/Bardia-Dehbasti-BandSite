@@ -154,7 +154,7 @@ form.addEventListener('submit', (e) => {
     //storing what the user has typed in the name input and <textarea> (userComment) input
     // as userName and userComment variables
     let userName = form.elements.userName.value;
-    let userComments = form.elements.userComments.value
+    let userComments = form.elements.userComments.value;
     
     
     //call generateTodayDate() function and assign it to variable dateOfComment

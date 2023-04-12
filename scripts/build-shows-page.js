@@ -44,23 +44,19 @@ const addNewChildElement = (elementType, className, innerText) => {
 const parentDiv = document.querySelector(".shows__right-section");
 
 //looping through each item of showsArray (each item is an object)
-for (let i = 0; i < showsArray.length; i++){
-    //assigning each object's property value to a variable
-    let date = showsArray[i].date;
-    let venue = showsArray[i].venue;
-    let location = showsArray[i].location;
-
-    //creating a new section element and assigning it to a new variable
-    //, giving it a new class name
+showsArray.forEach(show => {
+    let date = show.date;
+    let venue = show.venue;
+    let location = show.location;
     const newSection = document.createElement("section");
     newSection.classList.add("shows-row");
-    
+
 
     // create a new h3 element with class shows-row__title for date
     const headerDate = addNewChildElement("h3","shows-row__title",'date');
     newSection.appendChild(headerDate);
-    
-    
+
+
     //create a new p element with class show-row__date
     //and giving it a value from our showsArray
     const paragraphDate = addNewChildElement("h3","shows-row__date",date);
@@ -106,29 +102,36 @@ for (let i = 0; i < showsArray.length; i++){
     //adding anchor to newSection parent
     newSection.appendChild(anchor);
 
-    
+
     //appending the section element as a child to parentDiv
     parentDiv.appendChild(newSection);
-
-    //create a new horizontal rule element with a className of "show-divider"
-    // const horizontalRule = document.createElement("hr");
-    // horizontalRule.classList.add("show-divider");
-    // parentDiv.appendChild(horizontalRule);
-}
+})
 
 
-const showsRow = document.getElementsByClassName('shows-row');
 
-for (let i=0; i<showsRow.length; i++){
-    let selectedRow = null;
-    showsRow[i].addEventListener('click', (e)=>{
-        showsRow[i].classList.add("shows-row--selected")
-        selectedRow = e.target;
-        if (selectedRow !== null){
-            selectedRow.style.backgroundColor = "none";
-        };
-        
-        console.log(selectedRow);
+
+//to add the selected state to each row when clicked
+const showRows = document.querySelectorAll('.shows-row'); //return a list of all previously rendered rows
+
+//create a undefined variable to later capture the clicked row
+let prevRow;
+
+//loop through each item of showRows
+showRows.forEach(row => {
+    //adding an event listener to each row actived byclick
+    row.addEventListener('click', ()=>{
+        //checks if there is a row clicked before, i.e. the prevRow is not undefined, 
+        //and then removes the class name shows-row--selected sass modifier
+        if (prevRow){
+            prevRow.classList.remove('shows-row--selected');
+        }
+
+        //adds the sass class modifier --selected to make it 'selected' state
+        row.classList.add('shows-row--selected');
+
+        //keeps track of the clicked row by assigning it to prevRow variable
+        prevRow = row;
     })
-    
-}
+})
+
+
