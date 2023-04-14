@@ -692,7 +692,7 @@ footer {
   flex-wrap: nowrap;
   -moz-column-gap: 5vw;
        column-gap: 5vw;
-  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../../Design-Package/Assets/Images/hero-shows.jpg") no-repeat center;
+  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../Design-Package/Assets/Images/hero-shows.jpg") no-repeat center;
   background-size: cover;
   background-position-y: 35%;
 }
