@@ -1,9 +1,10 @@
 @use './mixins' as *;
 @use './variables' as *;
 
+//Styling for about the musicians section on index.html
 
 .about {
-    @include flex($direction:column,$align:flex-start);
+    @include flex($direction:column,$align:flex-start); //refer to the mixins
     padding: 0 1rem;
     @include tablet {
         padding: 0 3rem;
@@ -12,11 +13,11 @@
         padding: 0 8rem;
     }
     &__title {
-        @include font($size:2rem);
+        @include font($size:2rem); //refer to the mixins
         padding: 1.5rem 0 1rem 0;
         margin:0;
         @include tablet{
-            @include text-alterations($size:2.35rem, $pad:3rem 0 2.25rem 0, $w:22.133rem);
+            @include text-alterations($size:2.35rem, $pad:3rem 0 2.25rem 0, $w:22.133rem); //refer to the mixins
         }
         @include desktop {
             @include text-alterations($size:2.5rem, $pad:3rem 0 2.25rem 0, $w:24.42rem);
@@ -24,7 +25,7 @@
     }
     &__img{
         align-self: center;
-        @include height-width($h:100%);
+        @include height-width($h:100%); //height and width mixin
         @include tablet{
             @include height-width($h:21rem,$w:37rem);
         }
@@ -49,8 +50,6 @@
         width: 91%;
         margin:0;
         @include tablet {
-            //font-size: 1rem;
-            //padding: 0.5rem 3rem 0 3rem;
             margin: 0;
             @include text-alterations($size:1rem, $pad:0.5rem 3rem 0 3rem);
         }
@@ -61,7 +60,7 @@
 }
 
 
-.paragraphs-section {
+.paragraphs-section { //section containing the long paragraphs 
     @include flex($direction:column,$justify:center);
     @include tablet {
         padding: 0 3rem;

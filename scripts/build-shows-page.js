@@ -111,6 +111,8 @@ showsArray.forEach(show => {
 
 
 //to add the selected state to each row when clicked
+
+
 const showRows = document.querySelectorAll('.shows-row'); //return a list of all previously rendered rows
 
 //create a undefined variable to later capture the clicked row

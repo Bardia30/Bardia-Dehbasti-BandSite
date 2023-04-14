@@ -2,9 +2,10 @@
 @use './variables' as *;
 
 
+//styling for shows section
+
 .shows {
-    display:flex;
-    flex-direction: column;
+    @include flex($direction:column); //refer to the mixins
     @include tablet {
         padding: 0 3rem;
     }
@@ -29,17 +30,16 @@
 }
 
 .column-entries {
+    //not displayed for mobile view, only tablet size and up
     display: none;
     
-    width:35.5rem;
-    padding-top:3rem;
-    padding-left:2rem;
-    padding-bottom:2.5rem;
     @include tablet {
         display:flex;
-        padding-top:0;
-        padding-bottom:1rem;
-        padding-left:1.125rem;
+        width:35.5rem;
+        // padding-top:0;
+        // padding-bottom:1rem;
+        // padding-left:1.125rem;
+        padding: 0 0 1rem 1.125rem;
     }
     @include desktop{
         padding-top:3rem;
@@ -55,7 +55,7 @@
             }
         }
         &--second{
-            margin-right: 8rem
+            margin-right: 9.75rem;
         }
     }
 }
@@ -64,11 +64,13 @@
     width:53rem;
     padding: 1rem;
     border-bottom: $border-bottom;
+    //transition animation for hover state
     transition: $transition;
     cursor: pointer;
     &:hover{
         background-color: $alternative-background;
     }
+    //--selected modifier added with javascript when clicked to highlight each row
     &--selected{
         background-color: $divider-color;
         transition:none;
@@ -134,7 +136,7 @@
 
 
 .btn {
-    @include btn($w:92vw);
+    @include btn($w:92vw); //mixin for buttons
     @include tablet{
         @include font($size:1rem, $color:$alternative-background, $weight:400);
         width:10rem;

@@ -1,10 +1,11 @@
 @use './mixins' as *;
 @use './variables' as *;
 
+//styling fro header for both index and shows pages
 
 .nav {
-    background: $primary-bg-color;
-    @include flex($direction:column);
+    background: $primary-bg-color; //refer to variables
+    @include flex($direction:column); //refer to mixins page
     @include tablet {
         padding: 0 3.25rem;
         @include flex($direction:row,$align:center);

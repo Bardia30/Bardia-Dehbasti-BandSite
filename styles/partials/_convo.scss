@@ -2,6 +2,8 @@
 @use './variables' as *;
 
 
+//Styling for the Comments section on index.html
+
 .convo {
     padding: 0 1rem;
     @include tablet {
@@ -11,11 +13,11 @@
         padding: 0 8rem;
     }
     &__title {
-        @include font($size:2rem);
+        @include font($size:2rem); //refer to the mixins
         padding: 1.5rem 0 1rem 0;
         margin:0;
         @include tablet{
-            @include text-alterations($size:2.35rem, $pad:3rem 0 2.25rem 0, $w:24rem);
+            @include text-alterations($size:2.35rem, $pad:3rem 0 2.25rem 0, $w:24rem);//refer to the mixins
         }
         @include desktop {
             @include text-alterations($size:2.5rem, $pad:3rem 0 2.25rem 0, $w:26rem);
@@ -25,7 +27,7 @@
 
 
 .comment {
-    @include flex($justify: center, $gap: 1rem);
+    @include flex($justify: center, $gap: 1rem); //refer to the mixins
     &__pic-placeholder{
         margin-top:1rem;
         @include height-width($h:3rem, $w:3rem);
@@ -39,7 +41,7 @@
         @include flex($direction:column);
     }
     &__label{
-        text-transform: uppercase;
+        text-transform: uppercase; //to make the letters uppercase
         @include font($weight:400,$size:0.75rem,$color:$Secondary-text)
 
     }
@@ -60,12 +62,12 @@
             border: 1px solid black;
             outline:none;
         }
-        &--error {
+        &--error { //modifier to be added to classList using JavaScript in the form error state
             &:focus{
                 border:1px solid #D22D2D;
             }
         }
-    
+        //styling applied for the placeholder text in the input fields
         &::placeholder{
             @include font($size:1rem,$weight:400,$color:black);
             @include desktop{
@@ -77,7 +79,7 @@
         }
         &--long {
             height: 5rem;
-            resize: none;
+            resize: none; //to not allow the user to resize the textarea element
             padding-top:1rem;
         }
     }
@@ -85,7 +87,7 @@
 
 
 .btn {
-    @include btn;
+    @include btn; //styling applied to button which is reused, refer to mixins 
     @include tablet{
         width:10rem;
         height:2.5rem;
@@ -95,7 +97,7 @@
 
 
 .convo-divider {
-    @include divider;
+    @include divider; //styling applied fro divider hr element, refer to mixins
     @include tablet{
         width:42rem;
     }

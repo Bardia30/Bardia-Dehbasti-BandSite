@@ -8,19 +8,22 @@
     <link rel="stylesheet" href="./styles/bio.css">
 </head>
 <body>
+    <!-- Header of index page -->
     <header>
         <nav class="nav">
             <a class="logo-link" href="index.html"><img class="nav__logo" src="./Design-Package/Assets/Logo/Logo-bandsite.svg" alt="logo"></a>
             <ul class="nav__list">
-                <li class="nav__cta nav__cta--active"><a class="nav__link nav__link--current" href="#">Biography</a></li>
+                <li class="nav__cta nav__cta--active"><a class="nav__link nav__link--current" href="#">Biography</a></li><!-- the biography list item, is assigned with the --active modifier to have the underline underneath  -->
                 <li class="nav__cta"><a class="nav__link" href="./pages/shows.html">Shows</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="hero">
+        <!-- Hero section including the hero image section-->
+        <section class="hero"> <!--the background image is applied using css-->
             <h1 class="hero__title">The Bees Knees</h1>
         </section>
+        <!--the about the musicians section-->
         <section class="about">
             <h3 class="about__title">About the Musicians</h3>
             <img class="about__img" src="./Design-Package/Assets/Images/band.jpg" alt="bio-img">
@@ -29,7 +32,7 @@
             <p class="about__citation">- Bryan Teddy, lead vocalist of The Bees Knees</p>
             <section class="paragraphs-section">
                 <h3 class="paragraphs-section__title">The Bees Knees</h3>
-                <div class="paragraphs-section__container">
+                <div class="paragraphs-section__container"> <!--created a div as parent to each long paragraph section for flexbox positioning-->
                     <p class="paragraphs-section__long-paragraph">The Bees Knees is a pop rock band originating from San
                         Francisco, California. The band consists of lead vocalist Bryan
                         Teddy, guitarist Mack Tolkens, guitarist Andrew Green, bassist
@@ -51,6 +54,7 @@
                 </div>
             </section>
         </section>
+        <!-- gallery section -->
         <section class="gallery-section">
             <h3 class="gallery-section__title">Photo Gallery</h3>
             <div class="gallery">
@@ -65,25 +69,26 @@
                 <img class="gallery__img" src="./Design-Package/Assets/Images/Photo-gallery-9.jpg" alt="confetti-in-crowd-2">
             </div>
         </section>
+        <!-- the comment section -->
         <section class="convo">
             <h3 class="convo__title">Join the Conversation</h3>
-
             <div class="comment" action="">
                 <div class="comment__pic-placeholder">
                     <img class="comment__pic" src="./Design-Package/Assets/Images/Mohan-muruge.jpg" alt="mohan-muruge">
                 </div>
-                <div class="comment__form-section">
+                <div class="comment__form-section"><!--the parent div that contains the form element-->
                     <form class="comment__form" action="submit">
                         <label for="userName" class="comment__label">name</label>
                         <input name="userName" placeholder="Enter your name" class="comment__input comment__input--short" type="text" value="">
                         <label for="userComments" class="comment__label">comment</label>
                         <textarea name="userComments" placeholder="Add a new comment" class="comment__input comment__input--long" type="text" value=""></textarea>
-                        <button class="comment__btn btn" type="submit">comment
-                        </button>
+                        <button class="comment__btn btn" type="submit">comment</button>
                     </form>
                 </div>
             </div>
             <hr class="convo-divider">
+            <!-- This section has the previous comments rendered using JavaScript DOM Manipulation, one comment is kept as a comment to visualize how to rendered html would look like after  -->
+            
             <!--
             <div class="previous-comment">
                 <div class="previous-comment__pic-placeholder"></div>
@@ -96,46 +101,22 @@
                         everything that makes up this majestic work deserves reverence. Let
                         us appreciate this for what it is and what it contains.</p>
                 </div>
-            </div>
-            <hr class="convo-divider">
-            <div class="previous-comment">
-                <div class="previous-comment__pic-placeholder"></div>
-                <div class="previous-comment__texts">
-                    <div class="previous-comment__texts-top">
-                        <p class="previous-comment__name">Emilie Beach</p>
-                        <p class="previous-comment__date">01/09/2021</p>
-                    </div>
-                    <p class="previous-comment__long-paragraph">I feel blessed to have seen them in person. What a show! They were
-                        just perfection. If there was one day of my life I could relive, this
-                        would be it. What an incredible day.</p>
-                </div>
-            </div>
-            <hr class="convo-divider">
-            <div class="previous-comment">
-                <div class="previous-comment__pic-placeholder"></div>
-                <div class="previous-comment__texts">
-                    <div class="previous-comment__texts-top">
-                        <p class="previous-comment__name">Miles Acosta</p>
-                        <p class="previous-comment__date">12/20/2020</p>
-                    </div>
-                    <p class="previous-comment__long-paragraph">I can t stop listening. Every time I hear one of their songs - the vocals -
-                        it gives me goosebumps. Shivers straight down my spine. What a
-                       beautiful expression of creativity. Can t get enough.</p>
-                </div>
-            </div>
-            <hr class="convo-divider"> -->
+            </div> -->
+            
         </section>
     </main>
+    <!-- footer section -->
     <footer>
         <div class="footer-top">
-            <section class="footer-top__icons-section">
+            <section class="footer-top__icons-section"> <!--section top created for flexbox positioning-->
                 <h3 class="footer-top__title">Get in Touch</h3>
                 <a href="https://www.instagram.com/"><img class="footer-top__icons" src="./Design-Package/Assets/Icons/SVG/Icon-instagram.svg" alt="social"></a>
                 <a href="https://www.facebook.com/"><img class="footer-top__icons" src="./Design-Package/Assets/Icons/SVG/Icon-facebook.svg" alt="social"></a>
                 <a href="https://www.twitter.com/"><img class="footer-top__icons" src="./Design-Package/Assets/Icons/SVG/Icon-twitter.svg" alt="social"></a>
             </section>
-            <a href="index.html"><img class="footer-top__logo" src="./Design-Package/Assets/Logo/Logo-bandsite.svg" alt="logo"></a>
+            <a href="index.html"><img class="footer-top__logo" src="./Design-Package/Assets/Logo/Logo-bandsite.svg" alt="logo"></a> <!-- this image is hidden for mobile view-->
         </div>
+        <!-- emplyees section including the names, address, and emails -->
         <div class="employees-section">
             <section class="employee">
                 <h4 class="employee__name">Cam Adams<br>
@@ -159,7 +140,7 @@
                 <a href="mailto:cwhyte@archentertainment.com" class="employee__email">cwhyte@archentertainment.com</a>
             </section>
         </div>
-        <a href="index.html"><img class="logo-mobile" src="./Design-Package/Assets/Logo/Logo-bandsite.svg" alt="logo-mobile"></a>
+        <a href="index.html"><img class="logo-mobile" src="./Design-Package/Assets/Logo/Logo-bandsite.svg" alt="logo-mobile"></a> <!--this image is hidden for tablet view and higher-->
         <p class="copyright">Copyright The Bees Knees © 2021 All Rights Reserved</p>
 
     </footer>

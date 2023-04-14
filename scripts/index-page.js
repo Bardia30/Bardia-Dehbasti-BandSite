@@ -113,10 +113,10 @@ const clearCommentsSection = () => {
     //finds an array of all elements with "convo-divider" class and store it as an variable name allCommentsDivs
     const allHorRules = sectionParent.querySelectorAll(".convo-divider");
     //loop through the array created above and delete all comments and hr elements
-    for (i = 0; i < allCommentDivs.length;i++) {
-        allCommentDivs[i].remove();
+    allCommentDivs.forEach((comment,i) => {
+        comment.remove();
         allHorRules[i].remove();
-    }
+    })
 }
 
 

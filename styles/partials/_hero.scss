@@ -2,20 +2,20 @@
 @use './variables' as *;
 
 
-
+//styling for hero section for index page
 .hero {
-    @include height-width;
-    @include flex($direction:column,$justify:center, $align:flex-start);
-    background: $dark-filter, $bio-hero-url no-repeat center;
+    @include height-width; //refer to mixins
+    @include flex($direction:column,$justify:center, $align:flex-start); //refer to mixins
+    background: $dark-filter, $bio-hero-url no-repeat center; //refer to variables to see darkfilter styling applied and the url to bio image
     background-size: cover;
     @include tablet {
-        @include height-width($h:54vh);
+        @include height-width($h:54vh); //refer to mixins
     }
     @include desktop {
         @include height-width($h:75vh);
     }
     &__title{
-        @include font($size:2rem, $color:$secondary-bg-color);
+        @include font($size:2rem, $color:$secondary-bg-color); //refer to mixins
         padding-left:1rem;
         @include tablet {
             padding-left: 3rem;
@@ -27,12 +27,14 @@
     }
 }
 
+
+//styling for hero section for shows page
 .hero-shows {
     @include height-width($h:38vh);
     @include flex($direction:column,$justify:center, $align:flex-start);
     background: $dark-filter, $show-hero-url no-repeat center;
     background-size: cover;
-    background-position-y: 35%;
+    background-position-y: 35%; //to move the picture up in y-direction
     @include tablet {
         @include height-width($h:60vh);
     }

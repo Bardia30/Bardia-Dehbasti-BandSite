@@ -2,9 +2,12 @@
 @use './variables' as *;
 
 
+
+//styling for footer of index and shows page
+
 footer {
-    background: $primary-bg-color;
-    @include flex($direction:column);
+    background: $primary-bg-color; //refer to variables
+    @include flex($direction:column); //refer to mixins
     padding: 0 1rem;
     @include tablet {
         padding: 0rem 3rem 2.25rem 3rem;
@@ -15,18 +18,18 @@ footer {
 }
 
 .footer-top {
-    @include flex($direction:column, $justify:space-between, $gap:normal);
+    @include flex($direction:column, $justify:space-between, $gap:normal); //refer to mixins
     @include tablet {
         @include flex($justify:space-between, $align:center);
     }
 
     &__title{
-        @include font($size:2rem, $color:$alternative-background);
+        @include font($size:2rem, $color:$alternative-background);//refer to mixins
         padding:2rem 0 1rem 0;
         margin: 0;
         width:100%;
         @include tablet {
-            @include text-alterations($size:2.35rem, $pad:3rem 0 2.25rem 0,$w:14.375rem);
+            @include text-alterations($size:2.35rem, $pad:3rem 0 2.25rem 0,$w:14.375rem); //refer to mixins
         }
         @include desktop {
             font-size:2.5rem;
@@ -43,6 +46,7 @@ footer {
         }
     }
     &__icons{
+        //used transform for the size of social media icons because the facebook icon appears larger if width is used, and a special modifier needed to applied in that case. 
         transform: scale(1.5);
         padding:0.25rem 0.5rem 0 0.35rem;
         @include tablet{
@@ -55,6 +59,7 @@ footer {
         
     }
     &__logo {
+        //logo is hidden in mobile view and visible from tablet viewport and higher
         display: none;
         @include tablet{
             display: block;
