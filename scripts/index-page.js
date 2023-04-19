@@ -1,20 +1,105 @@
 let commentsArray = [
-    {
-        name: "Connor Walton",
-        comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-        timestamp: 1613538000000
-    },
-    {
-        name: "Emilie Beach",
-        comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-        timestamp: 1578546000000
-    },
-    {
-        name: "Miles Acosta",
-        comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-        timestamp: 1608440400000
-    }
+    // {
+    //     name: "Connor Walton",
+    //     comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+    //     timestamp: 1613538000000
+    // },
+    // {
+    //     name: "Emilie Beach",
+    //     comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+    //     timestamp: 1578546000000
+    // },
+    // {
+    //     name: "Miles Acosta",
+    //     comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+    //     timestamp: 1608440400000
+    // }
 ];
+
+let bandSiteCommentsURL= 'https://project-1-api.herokuapp.com/comments';
+
+const api_key = 'fb991a13-3922-4755-8731-2ed260aebdc9';
+
+bandSiteCommentsURL += '?api_key='+api_key;
+
+console.log(bandSiteCommentsURL);
+
+
+// const getKey = () => {
+//     return axios(bandSiteURL+'/register')
+//     .then(response => {
+//         return response.data.api_key;
+//     })
+//     .catch(err =>console.log(err))
+// }
+
+
+
+
+
+const getComments = () => {
+    return axios.get(bandSiteCommentsURL)
+    .then(result => {
+        return result.data;
+    })
+}
+
+const addCommentsToArray = () => {
+    return getComments().then(responseArray => {
+        responseArray.forEach(comment => {
+            commentsArray.unshift(comment);
+        })
+        return commentsArray;
+    });
+    //return commentsArray;
+}
+
+
+
+
+
+
+
+
+//test
+//getComments().then(response=>console.log(response)); //returns Array(3) [ {…}, {…}, {…} ]
+
+//getComments().then(response=>{
+//    return response;
+//});
+
+
+
+// getComments().then(res => {
+//     res.forEach(element=>commentsArray.push(element));
+//     renderCommentsSection();
+// })
+
+
+
+
+
+// axios.get(bandSiteURL+'/register')
+//     .then(response => {
+//         apiKey = response.data.api_key;
+
+//         axios.get(bandSiteURL+'/comments'+'?api_key='+apiKey)
+//         .then(res => {
+//             res.data.forEach(comment=>{
+//                 commentsArray.push(comment);
+//             })
+//         })
+//         .then(()=>{
+//             renderCommentsSection();
+//         })
+//         .catch(err =>{
+//             console.log(err)
+//         })
+
+//     })
+//     .catch(err=>{
+//         console.log(err)
+//     })
 
 
 //a function to return a converted timestamp to local date string
@@ -22,16 +107,6 @@ const  convertDate = d => {
     const newDate = new Date(d); //create a new Date object instance with the time set to a specific timestap in numerical format
     const dateConverted = newDate.toLocaleDateString(); //convert to x/xx/xxxx date format
     return dateConverted;
-};
-
-
-//a function that loops through each item in commentsArray
-// with .forEach() method and uses displayComment function
-//to render the comments on DOM
-const renderCommentsSection = () => {
-    commentsArray.forEach((comment) => {
-        displayComment(comment);
-    });
 };
 
 
@@ -105,6 +180,26 @@ const displayComment = (commentObject) => {
 }
 
 
+//a function that loops through each item in commentsArray
+// with .forEach() method and uses displayComment function
+//to render the comments on DOM
+const displayAllComments = (array) => {
+    array.forEach((comment) => {
+        displayComment(comment);
+    });
+};
+
+
+const showComments = () => {
+    addCommentsToArray().then(arr => {
+        displayAllComments(arr);
+    })
+}
+
+
+showComments();
+
+
 
 //a function to clear all the previous-comments divs, and all the horizantal rules that where added
 const clearCommentsSection = () => {
@@ -117,6 +212,7 @@ const clearCommentsSection = () => {
         comment.remove();
         allHorRules[i].remove();
     })
+    commentsArray =[];
 }
 
 
@@ -124,6 +220,12 @@ const clearCommentsSection = () => {
 
 //adding new comments to commentsArray
 
+//TODO: function to add new comment to the API taking in an object of new comments
+
+const postCommentToAPI = (obj) => {
+    return axios.post(bandSiteCommentsURL, obj, {headers : {"Content-Type": "application/json"}})
+        .then(result => console.log(result.data));
+}
 
 
 
@@ -132,18 +234,16 @@ const form = document.querySelector(".comment__form");
 const button = document.querySelector(".comment__btn");
 
 
-
 //we call renderCommentsSection in order to render the 
 //three default comments as required upon page reload
-renderCommentsSection();
 
 
 
 //a function that returns today's date in numeric format
-const generateTodayDate = () => {
-    const todayDate = new Date();
-    return todayDate[Symbol.toPrimitive]('number');
-}
+//const generateTodayDate = () => {
+//     const todayDate = new Date();
+//     return todayDate[Symbol.toPrimitive]('number');
+// }
 
 
 //adding an event listener to the form which is fired by the submit event
@@ -159,7 +259,7 @@ form.addEventListener('submit', (e) => {
     
     //call generateTodayDate() function and assign it to variable dateOfComment
     //this will be the date that the user has entered the comment
-    let dateOfComment = generateTodayDate();
+    //let dateOfComment = generateTodayDate();
 
 
     //create a new empty obect named newCommentObject with properties name, commentText, ands timestamp
@@ -169,14 +269,22 @@ form.addEventListener('submit', (e) => {
     //the comment property value is equal to userComments entered by the user
     newCommentObject.comment = userComments;
     //the timestamp property value is equal to dateOfComment which is the today's date converted from numeric format to m/dd/yyyy format
-    newCommentObject.timestamp = dateOfComment;
-    commentsArray.unshift(newCommentObject);
+    //newCommentObject.timestamp = dateOfComment;
+
+    // commentsArray.unshift(newCommentObject);
+    //instructions to add new comments to the API
+    postCommentToAPI(newCommentObject);
+    
 
     //we call clearCommentsSection function to clear all the previously rendered functions 
     //and then call renderCommentsSection function to render the commentsArray which 
     //now includes the newly added comment object entered by the user.  
     clearCommentsSection(); 
-    renderCommentsSection();
+    
+    setTimeout(()=>{
+        showComments();
+    }, 200)
+    //showComments();
 
     
     //we use the form method .reset() in order to bring back the values of 
@@ -186,3 +294,8 @@ form.addEventListener('submit', (e) => {
 
 
 
+// window.onload = () => {
+//     addCommentsToArray();
+//     console.log(commentsArray);
+//     renderCommentsSection(commentsArray);
+// }
