@@ -136,37 +136,42 @@ const getShows =() => {
             return showsArray;
         })
         .then(res => {
-            displayShowsArray(res);
+            return displayShowsArray(res);
         })
 }
 
-getShows();
-//displayShowsArray(showsArray);
+
+
 
 //to add the selected state to each row when clicked
 
+const makeHighlight = () => {
+    const showRows = document.querySelectorAll('.shows-row'); //return a list of all previously rendered rows
+    console.log(showRows);
+    //create a undefined variable to later capture the clicked row
+    let prevRow;
+    //loop through each item of showRows
+    showRows.forEach(row => {
+        //adding an event listener to each row actived byclick
+        row.addEventListener('click', ()=>{
+            //checks if there is a row clicked before, i.e. the prevRow is not undefined, 
+            //and then removes the class name shows-row--selected sass modifier
+            if (prevRow){
+                prevRow.classList.remove('shows-row--selected');
+            }
 
-const showRows = document.querySelectorAll('.shows-row'); //return a list of all previously rendered rows
+            //adds the sass class modifier --selected to make it 'selected' state
+            row.classList.add('shows-row--selected');
 
-//create a undefined variable to later capture the clicked row
-let prevRow;
-
-//loop through each item of showRows
-showRows.forEach(row => {
-    //adding an event listener to each row actived byclick
-    row.addEventListener('click', ()=>{
-        //checks if there is a row clicked before, i.e. the prevRow is not undefined, 
-        //and then removes the class name shows-row--selected sass modifier
-        if (prevRow){
-            prevRow.classList.remove('shows-row--selected');
-        }
-
-        //adds the sass class modifier --selected to make it 'selected' state
-        row.classList.add('shows-row--selected');
-
-        //keeps track of the clicked row by assigning it to prevRow variable
-        prevRow = row;
+            //keeps track of the clicked row by assigning it to prevRow variable
+            prevRow = row;
+        })
     })
-})
+}
 
-
+window.onload = () => {
+    getShows().then(res => {
+        //console.log(res);
+        makeHighlight();
+    });
+}

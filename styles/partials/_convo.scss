@@ -151,5 +151,25 @@
         margin-top: 0.5rem;
         margin-bottom:0;
     }
+    &__like{
+        width:2rem;
+        align-self: center;
+        cursor: pointer;
+    }
+    &__like-section{
+        align-self: flex-end;
+    }
+    &__counter {
+        @include font;
+        display: inline-block;
+        margin-right:1rem;
+        margin-top:0;
+        margin-bottom:0;
+    }
+    &__delete {
+        width:1.3rem;
+        margin-left: 1rem;
+        cursor: pointer;
+    }
 
 }

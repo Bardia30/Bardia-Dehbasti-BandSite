@@ -25,17 +25,6 @@ bandSiteCommentsURL += '?api_key='+api_key;
 console.log(bandSiteCommentsURL);
 
 
-// const getKey = () => {
-//     return axios(bandSiteURL+'/register')
-//     .then(response => {
-//         return response.data.api_key;
-//     })
-//     .catch(err =>console.log(err))
-// }
-
-
-
-
 
 const getComments = () => {
     return axios.get(bandSiteCommentsURL)
@@ -51,55 +40,12 @@ const addCommentsToArray = () => {
         })
         return commentsArray;
     });
-    //return commentsArray;
 }
 
 
 
 
 
-
-
-
-//test
-//getComments().then(response=>console.log(response)); //returns Array(3) [ {…}, {…}, {…} ]
-
-//getComments().then(response=>{
-//    return response;
-//});
-
-
-
-// getComments().then(res => {
-//     res.forEach(element=>commentsArray.push(element));
-//     renderCommentsSection();
-// })
-
-
-
-
-
-// axios.get(bandSiteURL+'/register')
-//     .then(response => {
-//         apiKey = response.data.api_key;
-
-//         axios.get(bandSiteURL+'/comments'+'?api_key='+apiKey)
-//         .then(res => {
-//             res.data.forEach(comment=>{
-//                 commentsArray.push(comment);
-//             })
-//         })
-//         .then(()=>{
-//             renderCommentsSection();
-//         })
-//         .catch(err =>{
-//             console.log(err)
-//         })
-
-//     })
-//     .catch(err=>{
-//         console.log(err)
-//     })
 
 
 //a function to return a converted timestamp to local date string
@@ -122,6 +68,9 @@ const displayComment = (commentObject) => {
     let name = commentObject.name; 
     let comment = commentObject.comment;
     let date = convertDate(commentObject.timestamp); //converting the timestamp to m/dd/yyyy format
+    let likes = commentObject.likes;
+    let id = commentObject.id;
+
 
     //create a new parent div element called newParentDiv 
     //with class previous-comment and appending it to the sectionParent
@@ -173,6 +122,30 @@ const displayComment = (commentObject) => {
     textTopDiv.appendChild(dateComment);
 
 
+    const likeSection = document.createElement('div');
+    likeSection.classList.add('previous-comment__like-section');
+    textParent.append(likeSection);
+
+    const likeCount = document.createElement('p');
+    likeCount.classList.add('previous-comment__counter');
+    likeCount.innerText = likes;
+    likeSection.append(likeCount);
+
+    const likeCounter = document.createElement('img');
+    likeCounter.classList.add('previous-comment__like');
+    likeCounter.src = './Design-Package/Assets/Icons/SVG/icon-like.svg';
+    likeCounter.id = id;
+    likeSection.append(likeCounter);
+
+    const deleter = document.createElement('img');
+    deleter.classList.add('previous-comment__delete');
+    deleter.src = './Design-Package/Assets/Icons/SVG/icon-delete.svg';
+    deleter.id = id;
+    likeSection.append(deleter);
+
+
+    
+
     //a horizantal rule element is created and added beneath the previous-comment div
     const horRule = document.createElement("hr");
     horRule.classList.add("convo-divider");
@@ -191,13 +164,33 @@ const displayAllComments = (array) => {
 
 
 const showComments = () => {
-    addCommentsToArray().then(arr => {
+    return addCommentsToArray().then(arr => {
         displayAllComments(arr);
     })
 }
 
 
-showComments();
+
+//TODO: function for PUT request 
+const deleteLike = (id) => {
+    return axios.delete(bandSiteCommentsURL+'/'+id+'')
+        .then(res => console.log(res))
+        .catch(err => console.error(err.message))
+}
+
+
+
+
+
+showComments().then(res => {
+    const deleteButton = document.querySelectorAll('.previous-comment__delete');
+
+    deleteButton.forEach(button => {
+        button.addEventListener('click', () => {
+            deleteLike(button.id);
+        })
+    })
+})
 
 
 
@@ -294,8 +287,3 @@ form.addEventListener('submit', (e) => {
 
 
 
-// window.onload = () => {
-//     addCommentsToArray();
-//     console.log(commentsArray);
-//     renderCommentsSection(commentsArray);
-// }

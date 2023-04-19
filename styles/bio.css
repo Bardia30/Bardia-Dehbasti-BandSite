@@ -1159,4 +1159,28 @@ body {
     color: #323232;
     line-height: 1.5rem;
   }
+}
+.previous-comment__like {
+  width: 2rem;
+  align-self: center;
+  cursor: pointer;
+}
+.previous-comment__like-section {
+  align-self: flex-end;
+}
+.previous-comment__counter {
+  font-family: "avenir";
+  font-size: 1rem;
+  font-weight: 500;
+  color: #323232;
+  line-height: normal;
+  display: inline-block;
+  margin-right: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.previous-comment__delete {
+  width: 1.3rem;
+  margin-left: 1rem;
+  cursor: pointer;
 }/*# sourceMappingURL=bio.css.map */
