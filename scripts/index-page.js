@@ -16,36 +16,47 @@ let commentsArray = [
     // }
 ];
 
+
+
+////////////// Variables
 let bandSiteCommentsURL= 'https://project-1-api.herokuapp.com/comments';
 
 const api_key = 'fb991a13-3922-4755-8731-2ed260aebdc9';
 
 bandSiteCommentsURL += '?api_key='+api_key;
 
-console.log(bandSiteCommentsURL);
+let BandSiteURL = 'https://project-1-api.herokuapp.com/comments';
 
 
+//finding the section with class convo and storing it as a variable with name sectionParent
+const sectionParent = document.querySelector(".convo");
 
+
+//finding the form, and the button and storing them as variables
+const form = document.querySelector(".comment__form");
+const button = document.querySelector(".comment__btn");
+
+////////////// functions
+
+
+// A function to return an axios promise, which uses .then() to return the response.data 
 const getComments = () => {
-    return axios.get(bandSiteCommentsURL)
+    return axios.get(bandSiteCommentsURL) //using axios to perform a get request from BanSite API
     .then(result => {
-        return result.data;
+        return result.data; //returns an array of all available comment objects in the API. 
     })
 }
 
+//a function that calls the the getComments func, which with its array response, 
+//loops through each one to add each object from API to the empty commentsArray
 const addCommentsToArray = () => {
     return getComments().then(responseArray => {
         responseArray.forEach(comment => {
-            commentsArray.unshift(comment);
+            commentsArray.unshift(comment); //using unshift to add to the first array position instead of last. 
         })
         return commentsArray;
     });
 }
-
-
-
-
-
 
 
 //a function to return a converted timestamp to local date string
@@ -56,12 +67,7 @@ const  convertDate = d => {
 };
 
 
-
-//finding the section with class convo and storing it as a variable with name sectionParent
-const sectionParent = document.querySelector(".convo");
-
-
-//a function that takes in an object as argument
+//a function that takes in an object from the API as argument
 // and creates displays a single comment block on the webpage
 const displayComment = (commentObject) => {
     //storing the name, comment and timestamp of each object from the commentsArray
@@ -121,30 +127,33 @@ const displayComment = (commentObject) => {
     dateComment.innerText = date; //innerText value is taken dynamically from the current object's property timestamp
     textTopDiv.appendChild(dateComment);
 
-
+    //to create the like-section div
     const likeSection = document.createElement('div');
     likeSection.classList.add('previous-comment__like-section');
     textParent.append(likeSection);
 
+
+    //to create a p element which shows the number of likes
     const likeCount = document.createElement('p');
     likeCount.classList.add('previous-comment__counter');
     likeCount.innerText = likes;
     likeSection.append(likeCount);
 
+    //to create the like button
     const likeCounter = document.createElement('img');
     likeCounter.classList.add('previous-comment__like');
     likeCounter.src = './Design-Package/Assets/Icons/SVG/icon-like.svg';
     likeCounter.id = id;
     likeSection.append(likeCounter);
 
+
+    //to create the delete button
     const deleter = document.createElement('img');
     deleter.classList.add('previous-comment__delete');
     deleter.src = './Design-Package/Assets/Icons/SVG/icon-delete.svg';
     deleter.id = id;
     likeSection.append(deleter);
 
-
-    
 
     //a horizantal rule element is created and added beneath the previous-comment div
     const horRule = document.createElement("hr");
@@ -153,7 +162,7 @@ const displayComment = (commentObject) => {
 }
 
 
-//a function that loops through each item in commentsArray
+//a function that receives an array as parameter, loops through each item in the array
 // with .forEach() method and uses displayComment function
 //to render the comments on DOM
 const displayAllComments = (array) => {
@@ -162,7 +171,8 @@ const displayAllComments = (array) => {
     });
 };
 
-
+//a function that returns addCommentstoArray Promise function which then
+// upon success uses the array returned to pass into displayAllComments functions
 const showComments = () => {
     return addCommentsToArray().then(arr => {
         displayAllComments(arr);
@@ -170,28 +180,20 @@ const showComments = () => {
 }
 
 
-
-//TODO: function for PUT request 
-const deleteLike = (id) => {
-    return axios.delete(bandSiteCommentsURL+'/'+id+'')
+//TODO: function for PUT request.
+const putLike = (id) => {
+    return axios.put(BandSiteURL+'/'+id+'/like?api_key='+api_key)
         .then(res => console.log(res))
-        .catch(err => console.error(err.message))
+        .catch(err => console.error(err))
 }
 
 
-
-
-
-showComments().then(res => {
-    const deleteButton = document.querySelectorAll('.previous-comment__delete');
-
-    deleteButton.forEach(button => {
-        button.addEventListener('click', () => {
-            deleteLike(button.id);
-        })
-    })
-})
-
+//TODO: function for DELETE request
+const deleteLike = (id) => {
+    return axios.delete(BandSiteURL+'/'+id+"?api_key="+api_key)
+        .then(res => console.log(res))
+        .catch(err => console.error(err.message))
+}
 
 
 //a function to clear all the previous-comments divs, and all the horizantal rules that where added
@@ -205,16 +207,11 @@ const clearCommentsSection = () => {
         comment.remove();
         allHorRules[i].remove();
     })
-    commentsArray =[];
+    commentsArray =[]; // re-assigns commentsArray to an empty array. 
 }
 
 
-
-
-//adding new comments to commentsArray
-
 //TODO: function to add new comment to the API taking in an object of new comments
-
 const postCommentToAPI = (obj) => {
     return axios.post(bandSiteCommentsURL, obj, {headers : {"Content-Type": "application/json"}})
         .then(result => console.log(result.data));
@@ -222,34 +219,51 @@ const postCommentToAPI = (obj) => {
 
 
 
-//finding the form, and the button and storing them as variables
-const form = document.querySelector(".comment__form");
-const button = document.querySelector(".comment__btn");
 
-
-//we call renderCommentsSection in order to render the 
-//three default comments as required upon page reload
+//////////////////////////////////calling showComments() function when page loads
+showComments();
 
 
 
-//a function that returns today's date in numeric format
-//const generateTodayDate = () => {
-//     const todayDate = new Date();
-//     return todayDate[Symbol.toPrimitive]('number');
-// }
+//when window loads, two eventlisteners are added to delete and like buttons. 
+//has room to improve to prevent loading and reloading the page. 
+//also the buttons will nt work on newly added buttons. which is a flaw.
+window.onload=(setTimeout(()=>{
+    const deleteButton = document.querySelectorAll('.previous-comment__delete');
+    const likeButton = document.querySelectorAll('.previous-comment__like');
 
+    deleteButton.forEach(button => {
+        button.addEventListener('click', () => {
+            deleteLike(button.id);
+            //clearCommentsSection();
+            setTimeout(()=>{
+                reloadPage();
+            }, 200);
+        })
+    });
+
+
+    likeButton.forEach(button => {
+        button.addEventListener('click', ()=>{
+            putLike(button.id);
+            setTimeout(()=>{
+                reloadPage();
+            },200);
+        })
+    })
+}, 2000))
 
 //adding an event listener to the form which is fired by the submit event
 //i.e. the anonymous callback funciton is triggered when the submit button is clicked
 form.addEventListener('submit', (e) => {
     e.preventDefault(); // to prevent the page reload when button is clicked
-    
+
     //storing what the user has typed in the name input and <textarea> (userComment) input
     // as userName and userComment variables
     let userName = form.elements.userName.value;
     let userComments = form.elements.userComments.value;
-    
-    
+
+
     //call generateTodayDate() function and assign it to variable dateOfComment
     //this will be the date that the user has entered the comment
     //let dateOfComment = generateTodayDate();
@@ -267,20 +281,22 @@ form.addEventListener('submit', (e) => {
     // commentsArray.unshift(newCommentObject);
     //instructions to add new comments to the API
     postCommentToAPI(newCommentObject);
-    
 
-    //we call clearCommentsSection function to clear all the previously rendered functions 
-    //and then call renderCommentsSection function to render the commentsArray which 
-    //now includes the newly added comment object entered by the user.  
-    clearCommentsSection(); 
-    
+
+    //we call clearCommentsSection function to clear all the previously rendered functions
+    //and then call renderCommentsSection function to render the commentsArray which
+    //now includes the newly added comment object entered by the user.
+    clearCommentsSection();
+
+
+    //after 200ms, showComments() is called to render the newly added function on screen
     setTimeout(()=>{
         showComments();
     }, 200)
     //showComments();
 
-    
-    //we use the form method .reset() in order to bring back the values of 
+
+    //we use the form method .reset() in order to bring back the values of
     //input and textarea elements back to default
     form.reset();
 });
