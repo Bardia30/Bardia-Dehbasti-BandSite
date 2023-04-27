@@ -19,12 +19,15 @@ let commentsArray = [
 
 
 ////////////// Variables
+//creating a variable with the bandSite API Comment endpoint,
+// and concatenating the API key to it which was acquired from postman
 let bandSiteCommentsURL= 'https://project-1-api.herokuapp.com/comments';
 
 const api_key = 'fb991a13-3922-4755-8731-2ed260aebdc9';
 
 bandSiteCommentsURL += '?api_key='+api_key;
 
+//another bandSite URL without the key to be used for PUT and delete requests
 let BandSiteURL = 'https://project-1-api.herokuapp.com/comments';
 
 
@@ -39,15 +42,15 @@ const button = document.querySelector(".comment__btn");
 ////////////// functions
 
 
-// A function to return an axios promise, which uses .then() to return the response.data 
+// A function to return an axios promise, which uses .then() to return the response.data
 const getComments = () => {
     return axios.get(bandSiteCommentsURL) //using axios to perform a get request from BanSite API
     .then(result => {
-        return result.data; //returns an array of all available comment objects in the API. 
+        return result.data; //returns an array of all available comment objects in the API.
     })
 }
 
-//a function that calls the the getComments func, which with its array response, 
+//a function that calls the the getComments func, which with its array response,
 //loops through each one to add each object from API to the empty commentsArray
 const addCommentsToArray = () => {
     return getComments().then(responseArray => {
@@ -71,27 +74,27 @@ const  convertDate = d => {
 // and creates displays a single comment block on the webpage
 const displayComment = (commentObject) => {
     //storing the name, comment and timestamp of each object from the commentsArray
-    let name = commentObject.name; 
+    let name = commentObject.name;
     let comment = commentObject.comment;
     let date = convertDate(commentObject.timestamp); //converting the timestamp to m/dd/yyyy format
     let likes = commentObject.likes;
     let id = commentObject.id;
 
 
-    //create a new parent div element called newParentDiv 
+    //create a new parent div element called newParentDiv
     //with class previous-comment and appending it to the sectionParent
     const newParentDiv = document.createElement("div");
     newParentDiv.classList.add("previous-comment");
     sectionParent.appendChild(newParentDiv);
-    
+
     //create a new parent div element called profilePic
-    //with class previous-comment__pic-placeholder 
+    //with class previous-comment__pic-placeholder
     //and appending it to the newParentDiv
-    //note: this is the gray profile pic 
+    //note: this is the gray profile pic
     const profilePicDiv = document.createElement("div");
     profilePicDiv.classList.add("previous-comment__pic-placeholder");
     newParentDiv.appendChild(profilePicDiv);
-    
+
 
     //another parent div is created do enclose all the texts as children
     //it is appended to newParentDiv (under profilePic)
@@ -113,8 +116,8 @@ const displayComment = (commentObject) => {
     longParagraph.classList.add("previous-comment__long-paragraph");
     longParagraph.innerText = comment //innerText value is taken dynamically from the current object's property commentText
     textParent.appendChild(longParagraph);
-    
-    
+
+
     //a paragraph element is created to enclose the name and is added to textTopDiv
     const nameUser = document.createElement("p");
     nameUser.classList.add("previous-comment__name");
@@ -180,7 +183,7 @@ const showComments = () => {
 }
 
 
-//TODO: function for PUT request.
+//function for PUT request.
 const putLike = (id) => {
     return axios.put(BandSiteURL+'/'+id+'/like?api_key='+api_key)
         .then(res => console.log(res))
@@ -188,7 +191,7 @@ const putLike = (id) => {
 }
 
 
-//TODO: function for DELETE request
+//function for DELETE request
 const deleteLike = (id) => {
     return axios.delete(BandSiteURL+'/'+id+"?api_key="+api_key)
         .then(res => console.log(res))
@@ -207,11 +210,11 @@ const clearCommentsSection = () => {
         comment.remove();
         allHorRules[i].remove();
     })
-    commentsArray =[]; // re-assigns commentsArray to an empty array. 
+    commentsArray =[]; // re-assigns commentsArray to an empty array.
 }
 
 
-//TODO: function to add new comment to the API taking in an object of new comments
+// function to add new comment to the API taking in an object of new comments
 const postCommentToAPI = (obj) => {
     return axios.post(bandSiteCommentsURL, obj, {headers : {"Content-Type": "application/json"}})
         .then(result => console.log(result.data));
@@ -225,8 +228,8 @@ showComments();
 
 
 
-//when window loads, two eventlisteners are added to delete and like buttons. 
-//has room to improve to prevent loading and reloading the page. 
+//when window loads, two eventlisteners are added to delete and like buttons.
+//has room to improve to prevent loading and reloading the page.
 //also the buttons will nt work on newly added buttons. which is a flaw.
 window.onload=(setTimeout(()=>{
     const deleteButton = document.querySelectorAll('.previous-comment__delete');

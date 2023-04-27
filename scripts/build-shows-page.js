@@ -32,7 +32,8 @@ let showsArray = [
 ]
 
 
-
+//function that creates a new element, given parametes of element type, class name, 
+//and the innertext and returns that new element
 const addNewChildElement = (elementType, className, innerText) => {
     let newElement = document.createElement(elementType);
     newElement .classList.add(className);
@@ -119,13 +120,15 @@ const displayShowsArray = (array) => {
     })
 }
 
-
+//creating a variable with showdates API endpoint, and then concatenating the api key to it for authentication
 let bandSiteShowdatesURL = 'https://project-1-api.herokuapp.com/showdates';
 const api_key = 'fb991a13-3922-4755-8731-2ed260aebdc9';
-bandSiteShowdatesURL += "?api_key="+api_key;
+bandSiteShowdatesURL += "?api_key="+api_key; //it becomes: https://project-1-api.herokuapp.com/showdates?api_key=fb991a13-3922-4755-8731-2ed260aebdc9
 
 
-
+//function that call a get reques from the API and retrieves the data,
+// then loops thrpugh the data array to push each one to the existing empty showsArray
+//and then, we use displayShowsArray with response passed onto it to render onto the DOM
 const getShows =() => {
     return axios(bandSiteShowdatesURL)
         .then(response => {
@@ -169,6 +172,8 @@ const makeHighlight = () => {
     })
 }
 
+
+//to activate the makeHighlight, after load when data is renderred from the API
 window.onload = () => {
     getShows().then(res => {
         //console.log(res);
